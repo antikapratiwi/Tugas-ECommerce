@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('unit', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->integer('id_ketua_tim')->references('id_anggota')->on('anggota');
-            $table->integer('id_anggota')->references('id_anggota')->on('anggota');
+            $table->string('nama_unit');
+            $table->string('alamat');
+            $table->string('no_telp');
             $table->timestamps();
         });
     }

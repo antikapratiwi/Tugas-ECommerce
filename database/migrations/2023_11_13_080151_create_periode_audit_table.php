@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('id_ketua_spi')->references('id_anggota')->on('anggota');
             $table->integer('id_billing')->references('id_billing')->on('billing');
             $table->integer('id_unit')->references('id_unit')->on('unit');
-            $table->integer('id_klausul')->references('id_klausul')->on('klausul');
             $table->timestamps();
         });
     }

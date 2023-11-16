@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('klausul', function (Blueprint $table) {
             $table->id();
             $table->string("nama_klausul");
-            $table->integer("id_unit")->references('id_unit')->on('unit');
-            $table->integer("id_analisis")->references('id_analisis')->on('hasil_analisis');
+            $table->integer("id_periode_audit")->references('id_periode_audit')->on('periode_audit');
             $table->timestamps();
         });
     }

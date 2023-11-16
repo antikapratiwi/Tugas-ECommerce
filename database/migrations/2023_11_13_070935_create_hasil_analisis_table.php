@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('penyebab');
             $table->string('akibat');
             $table->string('rekomendasi');
+            $table->integer('id_klausul')->references('id_klausul')->on('klausul');
             $table->timestamps();
         });
     }

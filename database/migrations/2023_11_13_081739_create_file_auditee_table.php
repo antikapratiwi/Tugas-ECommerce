@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_file');
             $table->string('url_file');
-            $table->integer('id_analisis')->references('id_analisis')->on('hasil_analisis');
+            $table->integer('id_klausul')->references('id_klausul')->on('klausul');
             $table->timestamps();
         });
     }

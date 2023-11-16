@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('nip');
             $table->string('nama');
             $table->integer('id_role')->references('id_role')->on('role');
+            $table->integer('id_unit')->references('id_unit')->on('unit');
             $table->timestamps();
         });
     }
