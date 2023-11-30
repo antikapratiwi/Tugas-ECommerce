@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('analisa', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_sub_klausul _audit');
+            $table->unsignedBigInteger('id_sub_klausul_audit');
             $table->string('deskripsi');
             $table->string('kondisi_awal');
             $table->string('dasar_evaluasi');

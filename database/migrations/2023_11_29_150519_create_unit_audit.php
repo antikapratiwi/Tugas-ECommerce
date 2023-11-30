@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_periode');
             $table->unsignedBigInteger('id_unit');
-            $table->unsignedBigInteger('id_standard');
+            $table->unsignedBigInteger('id_standar');
             $table->string('deskripsi');
             $table->string('status'); // selesai, belum_selesai
             $table->timestamps();
