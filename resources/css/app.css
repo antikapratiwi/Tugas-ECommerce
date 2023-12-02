@@ -1,0 +1,192 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Group 1000004357 */
+
+.navbar{
+position: absolute;
+width: 1440px;
+height: 140px;
+left: 0px;
+top: 0px;
+background: #D2EEF4;
+}
+
+
+
+
+
+/* Group 1000004356 */
+
+position: absolute;
+width: 1325.25px;
+height: 120px;
+left: 37px;
+top: 14px;
+
+
+
+/* Group 1000004355 */
+
+position: absolute;
+width: 758px;
+height: 24.11px;
+left: 334.5px;
+top: 56.89px;
+
+
+
+/* About */
+
+position: absolute;
+width: 57px;
+height: 24px;
+left: 466.5px;
+top: 56.89px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+
+
+
+/* Home */
+
+position: absolute;
+width: 56px;
+height: 24px;
+left: 334.5px;
+top: 57px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+
+
+
+/* Our Services */
+
+position: absolute;
+width: 122px;
+height: 24px;
+left: 600.5px;
+top: 56.89px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+
+
+
+/* Service Map */
+
+position: absolute;
+width: 118px;
+height: 24px;
+left: 794.5px;
+top: 56.89px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+
+
+
+/* Contact Us */
+
+position: absolute;
+width: 107px;
+height: 24px;
+left: 985.5px;
+top: 56.89px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+
+
+
+/* Frame 1 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 10px 30px;
+gap: 10px;
+
+position: absolute;
+width: 124px;
+height: 44px;
+left: 1238.25px;
+top: 46.89px;
+
+border: 2px solid #FFC1DC;
+border-radius: 100px;
+
+
+/* Sign in */
+
+width: 64px;
+height: 24px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+
+color: #333333;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Si AUdit */
+
+position: absolute;
+width: 104px;
+height: 120px;
+left: 37px;
+top: 14px;
+
+font-family: 'Aclonica';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 120px;
+/* identical to box height, or 500% */
+text-align: center;
+
+background: linear-gradient(90.79deg, #0048FF 3.42%, #D6008D 82.66%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+
