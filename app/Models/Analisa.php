@@ -20,6 +20,9 @@ class Analisa extends Model
         'id'
     ];
 
+    // asdasdhasdasdas
+    
+
     // ORM RELATIONSHIPS
 
     public function sub_klausul_audit(){ return $this->belongsTo(SubKlausul::class);}
