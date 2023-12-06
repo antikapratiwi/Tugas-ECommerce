@@ -10,11 +10,20 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class User extends Model
+use App\Models\TimAuditor;
+use App\Models\Unit;
+
+class Temuan extends Model
 {
     use HasFactory;
 
     protected $guarded = [
         'id'
     ];
+
+    // TODO hanya bisa diakses kalo user tipe AUDITOR
+    
+    public function tim_auditor(){ return $this->belongsTo(TimAuditor::class);}
+    // TODO hanya bisa diakses kalo user tipe AUDITEE
+    public function unit(){ return $this->belongsTo(Unit::class);}
 }

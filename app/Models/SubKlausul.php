@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\Klausul;
+
 class SubKlausul extends Model
 {
     use HasFactory;
@@ -17,4 +19,6 @@ class SubKlausul extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function klausul(){ return $this->belongsTo(Klausul::class);}
 }

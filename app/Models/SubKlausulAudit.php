@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\KlausulAudit;
+use App\Models\Analisa;
+use App\Models\FileUpload;
+
 class SubKlausulAudit extends Model
 {
     use HasFactory;
@@ -17,4 +21,8 @@ class SubKlausulAudit extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function klausul_audit(){ return $this->belongsTo(KlausulAudit::class);}
+    public function file_upload(){ return $this->hasOne(FileUpload::class);}
+    public function analisa(){ return $this->hasOne(Analisa::class);}
 }
