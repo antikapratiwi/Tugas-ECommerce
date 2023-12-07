@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\TimAuditor;
 use App\Models\Unit;
 
-class Temuan extends Model
+class User extends Model
 {
     use HasFactory;
 
