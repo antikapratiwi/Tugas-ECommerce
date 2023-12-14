@@ -37,5 +37,5 @@ use App\Http\Controllers\GeneralController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
