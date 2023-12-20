@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\ResponTemuan;
+
 class FileUploadLanjutan extends Model
 {
     use HasFactory;
@@ -17,4 +19,6 @@ class FileUploadLanjutan extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function respon_temuan(){ return $this->belongsTo(ResponTemuan::class);}
 }

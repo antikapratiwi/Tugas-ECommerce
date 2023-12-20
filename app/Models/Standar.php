@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\UnitAudit;
+use App\Models\Klausul;
+
 class Standar extends Model
 {
     use HasFactory;
@@ -17,4 +20,7 @@ class Standar extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function unit_audits(){ return $this->hasMany(UnitAudit::class);}
+    public function klausuls(){ return $this->hasMany(Klausul::class);}
 }

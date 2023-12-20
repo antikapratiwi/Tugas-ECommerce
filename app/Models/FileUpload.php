@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\SubKlausulAudit;
+
 class FileUpload extends Model
 {
     use HasFactory;
@@ -17,4 +19,6 @@ class FileUpload extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function sub_klausul_audit(){ return $this->belongsTo(SubKlausulAudit::class);}
 }

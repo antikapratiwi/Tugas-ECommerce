@@ -1,4 +1,4 @@
-<?php
+<?php //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 
 namespace App\Models;
 
@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 use App\Models\SubKlausul;
+use App\Models\Temuan;
+use App\Models\AnalisaLanjutan;
 
 class Analisa extends Model
 {
@@ -20,10 +22,9 @@ class Analisa extends Model
         'id'
     ];
 
-    // asdasdhasdasdas
-    
-
     // ORM RELATIONSHIPS
 
     public function sub_klausul_audit(){ return $this->belongsTo(SubKlausul::class);}
+    public function temuan(){ return $this->hasOne(Temuan::class);}
+    public function analisa_lanjutan(){ return $this->hasOne(AnalisaLanjutan::class);}
 }
