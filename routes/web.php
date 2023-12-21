@@ -39,3 +39,18 @@ use App\Http\Controllers\GeneralController;
 Route::get('/', function () {
     return view('dashboard');
 });
+
+Route::get('/unit_index', function () {
+    return view('unit_index');
+});
+Route::get('/unit_create', function () {
+    return view('unit_create');
+});
+
+Route::get('/billing_index', function () {
+    return view('billing_index');
+});
+
+Route::get('/analisa_index', function () {
+    return view('analisa_index');
+});
