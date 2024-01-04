@@ -20,6 +20,7 @@ class Klausul extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "klausul";
 
     public function standar(){ return $this->belongsTo(Standar::class);}
     public function sub_klausuls(){ return $this->hasMany(SubKlausul::class);}

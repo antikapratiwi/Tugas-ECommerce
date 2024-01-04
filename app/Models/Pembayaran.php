@@ -19,6 +19,7 @@ class Pembayaran extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "pembayaran";
 
     public function billing(){ return $this->belongsTo(Billing::class);}
 }

@@ -28,14 +28,13 @@
             <tbody>
               <tr>
                 <td class="font-weight-medium"> 1 </td>
-                <td> Herman Beck </td>
+                <td> Bank Negara Indonesia </td>
                 <td>
-                  <div class="progress">
-                    <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+                    Jakarta
                 </td>
-                <td> $ 77.99 </td>
-                <td class="text-danger"> 53.64% <i class="mdi mdi-arrow-down"></i>
+                <td> Haryanto </td>
+                <td> 
+                  092918183
                 </td>
                 <td> {{-- FOR BUTTONS --}}
                   <button type="button" class="btn btn-rounded btn-primary btn-fw">

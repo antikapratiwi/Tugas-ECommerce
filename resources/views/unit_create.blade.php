@@ -18,8 +18,23 @@
               <input type="text" placeholder="Nama Unit" class="form-control">
             </div>
           </div>
-
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" placeholder="Alamat" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" placeholder="Nama Pimpinan" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" placeholder="NIP Pimpinan" class="form-control">
+            </div>
+          </div>
         </form>
+        <button type="button" class="btn btn-primary btn-sm"> Submit </button>
       </div>
     </div>
   </div>

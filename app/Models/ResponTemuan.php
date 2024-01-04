@@ -21,6 +21,7 @@ class ResponTemuan extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "respon_temuan";
 
     public function temuan(){ return $this->belongsTo(Temuan::class);}
     public function analisa_lanjutan(){ return $this->hasOne(AnalisaLanjutan::class);}
