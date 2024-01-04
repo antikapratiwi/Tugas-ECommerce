@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Standar;
 use App\Models\Klausul;
 use App\Models\SubKlausul;
+use App\Models\Unit;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,10 +28,37 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->CreateStandar();
+        $this->CreateUnit();
+    }
+
+    private function CreateUnit()
+    {
+        Unit::create([
+            'id' => 1,
+            'nama' => 'Bank Central Asia',
+            'alamat' => 'Jakarta Pusat',
+            'nama_pimpinan' => 'Dr. Ir. Sutanto',
+            'nip_pimpinan' => '082931028'
+        ]);
+        Unit::create([
+            'id' => 2,
+            'nama' => 'Freeport',
+            'alamat' => 'Jayapura',
+            'nama_pimpinan' => 'John Doe',
+            'nip_pimpinan' => '12412452145'
+        ]);
+        Unit::create([
+            'id' => 3,
+            'nama' => 'Mixue',
+            'alamat' => 'Bandung',
+            'nama_pimpinan' => 'James Bond',
+            'nip_pimpinan' => '242521521'
+        ]);
     }
 
     private function CreateStandar()
     {
+
         Standar::create([
             'id' => 1,
             'nama' => 'ISO 37001',

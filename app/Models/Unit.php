@@ -20,6 +20,7 @@ class Unit extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "unit";
 
     // TODO users tipenya harus AUDITEE
     public function users(){ return $this->hasMany(User::class);}

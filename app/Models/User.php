@@ -20,6 +20,7 @@ class User extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "user";
 
     // TODO hanya bisa diakses kalo user tipe AUDITOR
     

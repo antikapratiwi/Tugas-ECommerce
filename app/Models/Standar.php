@@ -20,6 +20,7 @@ class Standar extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "standar";
 
     public function unit_audits(){ return $this->hasMany(UnitAudit::class);}
     public function klausuls(){ return $this->hasMany(Klausul::class);}

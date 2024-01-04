@@ -19,6 +19,7 @@ class FileUpload extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "file_upload";
 
     public function sub_klausul_audit(){ return $this->belongsTo(SubKlausulAudit::class);}
 }

@@ -20,6 +20,7 @@ class KlausulAudit extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "klausul_audit"; 
 
     public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
     public function sub_klausul_audits(){ return $this->hasMany(SubKlausulAudit::class);}

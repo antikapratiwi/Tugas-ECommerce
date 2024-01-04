@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Unit;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UnitController extends Controller
 {
@@ -12,7 +14,10 @@ class UnitController extends Controller
      */
     public function index()
     {
-        //
+        $units = Unit::latest()->get();
+        return view("unit_index", [
+            'main_data' => $units
+        ]);
     }
 
     /**
@@ -20,7 +25,7 @@ class UnitController extends Controller
      */
     public function create()
     {
-        //
+        return view("unit_create");
     }
 
     /**
@@ -28,7 +33,18 @@ class UnitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // TODO: validation
+
+        $x = Unit::create([
+            // 'id' => $request,
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'nama_pimpinan' => $request->nama_pimpinan,
+            'nip_pimpinan' => $request->nip_pimpinan
+        ]);
+
+        return redirect('/unit_index');
     }
 
     /**
@@ -44,7 +60,10 @@ class UnitController extends Controller
      */
     public function edit(Unit $unit)
     {
-        //
+        // dd($unit);
+        return view('/unit_edit', [
+            'data' => $unit
+        ]);
     }
 
     /**
@@ -52,7 +71,21 @@ class UnitController extends Controller
      */
     public function update(Request $request, Unit $unit)
     {
-        //
+        // TODO: validation
+        dd($request);
+        $rules = [];
+
+        $validatedRequest = $request->validate($rules);
+
+        // Unit::where('id', $request->id)->update([
+        //     'nama' => $request->nama,
+        //     'alamat' => $request->alamat,
+        //     'nama_pimpinan' => $request->nama_pimpinan,
+        //     'nip_pimpinan' => $request->nip_pimpinan
+        // ]);
+        Unit::where('id', $unit->id)->update($validatedRequest);
+
+        return redirect('/unit_index');
     }
 
     /**
@@ -60,6 +93,9 @@ class UnitController extends Controller
      */
     public function destroy(Unit $unit)
     {
-        //
+        // TODO: validation
+
+        $unit->delete();
+        return redirect('/unit_index');
     }
 }

@@ -19,6 +19,7 @@ class FileUploadLanjutan extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "file_upload_lanjutan";
 
     public function respon_temuan(){ return $this->belongsTo(ResponTemuan::class);}
 }

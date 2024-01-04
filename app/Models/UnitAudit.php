@@ -25,6 +25,7 @@ class UnitAudit extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "unit_audit";
 
     public function periode(){ return $this->belongsTo(Periode::class);}
     public function unit(){ return $this->belongsTo(Unit::class);}

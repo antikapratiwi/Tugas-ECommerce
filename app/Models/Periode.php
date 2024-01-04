@@ -19,6 +19,7 @@ class Periode extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "periode";
 
     public function unit_audits(){ return $this->hasMany(UnitAudit::class);}
 }
