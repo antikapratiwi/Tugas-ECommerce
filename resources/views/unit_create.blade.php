@@ -11,30 +11,31 @@
   <div class="col-lg-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Daftar Unit</h4>
-        <form action="#">
+        <h4 class="card-title">Tambah Unit</h4>
+        <form method="post" enctype="multipart/form-data" action="/unit_create">
+          @csrf
           <div class="form-group">
             <div class="input-group">
-              <input type="text" placeholder="Nama Unit" class="form-control">
+              <input type="text" placeholder="Nama Unit" class="form-control" id="nama" name="nama">
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
-              <input type="text" placeholder="Alamat" class="form-control">
+              <input type="text" placeholder="Alamat" class="form-control" id="alamat" name="alamat">
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
-              <input type="text" placeholder="Nama Pimpinan" class="form-control">
+              <input type="text" placeholder="Nama Pimpinan" class="form-control" id="nama_pimpinan" name="nama_pimpinan">
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
-              <input type="text" placeholder="NIP Pimpinan" class="form-control">
+              <input type="text" placeholder="NIP Pimpinan" class="form-control" id="nip_pimpinan" name="nip_pimpinan">
             </div>
           </div>
+          <button type="submit" class="btn btn-primary btn-sm"> Submit </button>
         </form>
-        <button type="button" class="btn btn-primary btn-sm"> Submit </button>
       </div>
     </div>
   </div>
