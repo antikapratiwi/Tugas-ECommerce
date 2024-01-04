@@ -40,9 +40,11 @@
                       <button type="button" class="btn btn-rounded btn-primary btn-fw">
                         View
                       </button>
-                      <button type="button" class="btn btn-rounded btn-dark btn-fw">
-                        Edit
-                      </button>
+                      <a href="/unit_edit/{{ $data->id }}">
+                        <button type="button" class="btn btn-rounded btn-dark btn-fw">
+                          Edit
+                        </button>
+                      </a>
                       <a href="/unit_destroy/{{ $data->id }}">
                         <button type="button" class="btn btn-rounded btn-danger btn-fw">
                           Remove
