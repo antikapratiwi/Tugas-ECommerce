@@ -21,6 +21,7 @@ class SubKlausulAudit extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "sub_klausul_audit";
 
     public function klausul_audit(){ return $this->belongsTo(KlausulAudit::class);}
     public function file_upload(){ return $this->hasOne(FileUpload::class);}

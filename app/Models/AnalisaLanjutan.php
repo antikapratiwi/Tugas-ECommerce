@@ -20,6 +20,7 @@ class AnalisaLanjutan extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "analisa_lanjutan";
 
     public function analisa(){ return $this->belongsTo(Analisa::class);}
     public function respon_temuan(){ return $this->belongsTo(ResponTemuan::class);}

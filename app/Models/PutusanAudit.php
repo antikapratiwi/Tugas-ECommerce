@@ -19,6 +19,7 @@ class PutusanAudit extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "putusan_audit";
 
     public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
 }

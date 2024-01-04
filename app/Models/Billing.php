@@ -20,6 +20,7 @@ class Billing extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "billing";
 
     public function pembayarans(){ return $this->hasMany(Pembayaran::class);}
     public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}

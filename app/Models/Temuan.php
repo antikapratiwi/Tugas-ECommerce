@@ -20,6 +20,7 @@ class Temuan extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "temuan";
 
     public function analisa(){ return $this->belongsTo(Analisa::class);}
     public function respon_temuan(){ return $this->hasOne(ResponTemuan::class);}

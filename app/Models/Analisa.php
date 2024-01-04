@@ -22,6 +22,8 @@ class Analisa extends Model
         'id'
     ];
 
+    protected $table = "analisa";
+
     // ORM RELATIONSHIPS
 
     public function sub_klausul_audit(){ return $this->belongsTo(SubKlausul::class);}

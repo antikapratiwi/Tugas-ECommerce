@@ -20,6 +20,7 @@ class TimAuditor extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "tim_auditor";
 
     // TODO: users  tipenya harus AUDITOR
     public function users(){ return $this->hasMany(User::class);}
