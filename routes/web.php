@@ -40,12 +40,14 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/unit_index', function () {
-    return view('unit_index');
-});
-Route::get('/unit_create', function () {
-    return view('unit_create');
-});
+// ============== UNIT
+Route::get('/unit_index', [UnitController::class, 'index']);
+Route::get('/unit_create', [UnitController::class, 'create']);
+Route::post('/unit_create', [UnitController::class, 'store']);
+Route::get('/unit_edit/{unit}', [UnitController::class, 'edit']);
+Route::post('/unit_update/{unit}', [UnitController::class, 'update']);
+Route::get('/unit_destroy/{unit}', [UnitController::class, 'destroy']);
+
 
 Route::get('/billing_index', function () {
     return view('billing_index');
