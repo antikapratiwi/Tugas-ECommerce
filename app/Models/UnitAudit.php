@@ -27,9 +27,9 @@ class UnitAudit extends Model
     ];
     protected $table = "unit_audit";
 
-    public function periode(){ return $this->belongsTo(Periode::class);}
-    public function unit(){ return $this->belongsTo(Unit::class);}
-    public function standar(){ return $this->belongsTo(Standar::class);}
+    public function periode(){ return $this->belongsTo(Periode::class, 'id_periode');}
+    public function unit(){ return $this->belongsTo(Unit::class, 'id_unit');}
+    public function standar(){ return $this->belongsTo(Standar::class, 'id_standar');}
     public function tim_auditor(){ return $this->hasOne(TimAuditor::class);}
     public function putusan_audit(){ return $this->hasOne(PutusanAudit::class);}
     public function billing(){ return $this->hasOne(Billing::class);}

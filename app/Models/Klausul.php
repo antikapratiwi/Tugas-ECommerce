@@ -22,6 +22,6 @@ class Klausul extends Model
     ];
     protected $table = "klausul";
 
-    public function standar(){ return $this->belongsTo(Standar::class);}
-    public function sub_klausuls(){ return $this->hasMany(SubKlausul::class);}
+    public function standar(){ return $this->belongsTo(Standar::class, 'id_standar');}
+    public function sub_klausuls(){ return $this->hasMany(SubKlausul::class, 'id_klausul');}
 }
