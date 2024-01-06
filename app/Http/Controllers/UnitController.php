@@ -52,7 +52,9 @@ class UnitController extends Controller
      */
     public function show(Unit $unit)
     {
-        //
+        return view('/unit_detail', [
+            'data' => $unit
+        ]);
     }
 
     /**
@@ -91,13 +93,5 @@ class UnitController extends Controller
 
         $unit->delete();
         return redirect('/unit_index');
-    }
-
-
-    public function inspect(Unit $unit)
-    {
-        return view('/unit_detail', [
-            'data' => $unit
-        ]);
     }
 }

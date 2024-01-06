@@ -47,7 +47,16 @@ Route::post('/unit_create', [UnitController::class, 'store']);
 Route::get('/unit_edit/{unit}', [UnitController::class, 'edit']);
 Route::post('/unit_update/{unit}', [UnitController::class, 'update']);
 // Route::get('/unit_destroy/{unit}', [UnitController::class, 'destroy']);
-Route::get('/unit_detail/{unit}', [UnitController::class, 'inspect']);
+Route::get('/unit_detail/{unit}', [UnitController::class, 'show']);
+
+// ============== PERIODE
+Route::get('/periode_index', [PeriodeController::class, 'index']);
+Route::get('/periode_create', [PeriodeController::class, 'create']);
+Route::post('/periode_create', [PeriodeController::class, 'store']);
+Route::get('/periode_edit/{periode}', [PeriodeController::class, 'edit']);
+Route::post('/periode_update/{periode}', [PeriodeController::class, 'update']);
+// Route::get('/periode_destroy/{periode}', [PeriodeController::class, 'destroy']);
+Route::get('/periode_detail/{periode}', [PeriodeController::class, 'show']);
 
 
 Route::get('/billing_index', function () {

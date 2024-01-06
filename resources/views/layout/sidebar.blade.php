@@ -32,7 +32,7 @@
       </a>
     </li>
     <li class="nav-item"> 
-      <a class="nav-link" href="/">
+      <a class="nav-link" href="/periode_index">
         <i class="menu-icon mdi mdi-television"></i>
         <span class="menu-title">Periode</span>
       </a>
