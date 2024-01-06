@@ -74,17 +74,26 @@
         <span class="menu-title">Standar</span>
       </a>
     </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Unit Audit</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Tim Auditor</span>
+      </a>
+    </li>
     <li class="nav-item  ">
       <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
         <i class="menu-icon mdi mdi-dna"></i>
-        <span class="menu-title">Unit Audit</span>
+        <span class="menu-title">Proses Audit</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse " id="basic-ui">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item ">
-            <a class="nav-link" href="/">Dashboard</a>
-          </li>
           <li class="nav-item ">
             <a class="nav-link" href="/">Submisi {{-- (subklausul & file upload) --}}</a>
           </li>
@@ -94,31 +103,31 @@
           <li class="nav-item ">
             <a class="nav-link" href="/">Temuan</a>
           </li>
-          <li class="nav-item  ">
-            <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
-              <i class="menu-icon mdi mdi-dna"></i>
-              <span class="menu-title">Pasca Audit</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse " id="basic-ui">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item ">
-                  <a class="nav-link" href="/">Submisi lanjutan {{-- (respon temuan & file upload lanjutan) --}}</a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link" href="/">Analisa Lanjutan</a>
-                </li>
-              </ul>
-            </div>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item  ">
+      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+        <i class="menu-icon mdi mdi-dna"></i>
+        <span class="menu-title">Proses Pasca Audit</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse " id="basic-ui">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Submisi lanjutan {{-- (respon temuan & file upload lanjutan) --}}</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">Finalisasi {{-- (rilis putusan audit) --}}</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/">Tim Auditor</a>
+            <a class="nav-link" href="/">Analisa Lanjutan</a>
           </li>
         </ul>
       </div>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Finalisasi Audit</span>
+      </a>
     </li>
 
 
@@ -135,16 +144,24 @@
         <span class="menu-title">Panduan</span>
       </a>
     </li>
-    <li class="nav-item"> 
-      <a class="nav-link" href="/">
-        <i class="menu-icon mdi mdi-television"></i>
-        <span class="menu-title">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</span>
+    <li class="nav-item  ">
+      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+        <i class="menu-icon mdi mdi-dna"></i>
+        <span class="menu-title">Proses Audit</span>
+        <i class="menu-arrow"></i>
       </a>
+      <div class="collapse " id="basic-ui">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</a>
+          </li>
+        </ul>
+      </div>
     </li>
     <li class="nav-item  ">
       <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
         <i class="menu-icon mdi mdi-dna"></i>
-        <span class="menu-title">Pasca Audit</span>
+        <span class="menu-title">Proses Pasca Audit</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse " id="basic-ui">
