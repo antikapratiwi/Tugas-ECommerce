@@ -14,8 +14,10 @@ use App\Models\Analisa;
 use App\Models\Temuan;
 use App\Models\ResponTemuan;
 use App\Models\AnalisaLanjutan;
+use App\Models\PutusanAudit;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class AuditSeeder extends Seeder
 {
@@ -25,19 +27,33 @@ class AuditSeeder extends Seeder
     public function run(): void
     {
         $units = Unit::all();
-        foreach ($units as $unit) {
-            $this->createUnitAudit($unit);
+        foreach ($units as $i => $unit) {
+            $k = $i % 3;
+            if ($k == 0) {
+                $this->createUnitAudit($unit, true, true);
+            } elseif ($k == 1) {
+                $this->createUnitAudit($unit, true, false);
+            } elseif ($k == 2) {
+                $this->createUnitAudit($unit, false, false);
+            }
         }
     }
 
-    public function createUnitAudit($unit)
+    public function createUnitAudit($unit, $done, $comply)
     {
+        $periodes = [];
+        if ($done) {
+            $periodes = Periode::whereRaw('tgl_selesai < CURRENT_DATE')->pluck('id');
+        } else {
+            $periodes = Periode::whereRaw('tgl_selesai >= CURRENT_DATE')->pluck('id');
+        }
+
         $unitAudit = UnitAudit::create([
-            'id_periode' => fake()->randomElement(Periode::pluck('id')),
+            'id_periode' => fake()->randomElement($periodes),
             'id_unit' => $unit->id,
             'id_standar' => fake()->randomElement(Standar::pluck('id')),
             'deskripsi' => fake()->sentence(),
-            'status' => 'belum selesai'
+            'status' => $done ? 'selesai' : 'belum selesai'
         ]);
 
         $auditors = User::where('tipe', 'auditor')->get();
@@ -55,7 +71,7 @@ class AuditSeeder extends Seeder
             ]);
 
             if ($klausul->persyaratan) {
-                foreach ($klausul->sub_klausuls as $subKlausul) {
+                foreach ($klausul->sub_klausuls as $i => $subKlausul) {
                     $subKlausulAudit = SubKlausulAudit::create([
                         'id_klausul_audit' => $klausulAudit->id,
                         'slug' => $subKlausul->slug,
@@ -66,10 +82,24 @@ class AuditSeeder extends Seeder
                         'format_file_upload' => $subKlausul->format_file_upload
                     ]);
 
-                    $this->createAnalisa($subKlausulAudit, $unitAudit);
+                    if (!$comply) {
+                        if ($done) {
+                            $this->createAnalisa($subKlausulAudit, $unitAudit, $i < count($klausul->sub_klausuls) / 2);
+                        } else {
+                            $this->createAnalisa($subKlausulAudit, $unitAudit, fake()->boolean());
+                        }
+                    } else {
+                        $this->createAnalisa($subKlausulAudit, $unitAudit, true);
+                    }
                 }
             }
         }
+
+        if ($done) {
+            $this->createPutusanAudit($unitAudit, $comply);
+        }
+
+        return $unitAudit;
     }
 
     public function createTimAuditor($unitAudit, $auditor, $jabatan)
@@ -81,14 +111,14 @@ class AuditSeeder extends Seeder
         ]);
     }
 
-    public function createAnalisa($subKlausulAudit, $unitAudit)
+    public function createAnalisa($subKlausulAudit, $unitAudit, $comply)
     {
         $analisa = Analisa::create([
             'id_sub_klausul_audit' => $subKlausulAudit->id,
             'deskripsi' => fake()->sentence(),
             'kondisi_awal' => fake()->sentence(),
             'dasar_evaluasi' => fake()->sentence(),
-            'mematuhi_standar' => fake()->boolean
+            'mematuhi_standar' => $comply
         ]);
 
         if (!$analisa->mematuhi_standar) {
@@ -134,6 +164,20 @@ class AuditSeeder extends Seeder
             'mematuhi_standar' => fake()->boolean(),
             'keterangan' => fake()->sentence(),
             'id_analisa_cache' => $analisa->id
+        ]);
+    }
+
+    public function createPutusanAudit($unitAudit, $comply)
+    {
+        $tglRilis = (new Carbon($unitAudit->periode->tgl_selesai))->addMonth(1);
+        $tglKadaluwarsa = $tglRilis->copy()->addYear(5);
+
+        return PutusanAudit::create([
+            'id_unit_audit' => $unitAudit->id,
+            'mematuhi_standar' => $comply,
+            'tgl_rilis' => $tglRilis,
+            'tgl_kadaluwarsa' => $tglKadaluwarsa,
+            'keterangan' => fake()->paragraph()
         ]);
     }
 }
