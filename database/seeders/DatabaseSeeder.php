@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             InstanceSeeder::class,
-            AuditSeeder::class
+            AuditSeeder::class,
+            OutputSeeder::class
         ]);
     }
 }

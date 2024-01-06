@@ -34,7 +34,9 @@ class InstanceSeeder extends Seeder
             }
         }
 
-        $this->createPeriode('Audit Tahunan');
+        $this->createPeriode(1, 1);
+        $this->createPeriode(1, 2);
+        $this->createPeriode(0);
 
         for ($i = 0; $i < 3; $i++) {
             $unit = $this->createUnit();
@@ -52,16 +54,25 @@ class InstanceSeeder extends Seeder
         }
     }
 
-    public function createPeriode($nama)
+    public function createPeriode($deltaYear, $semester = 0)
     {
-        $tgl_mulai = new Carbon(fake()->dateTimeBetween('-1 month'));
+        $reference = now()->subYear($deltaYear);
+
+        $year = $reference->year;
+        if ($deltaYear == 0) {
+            $semester = (floor(($reference->month - 1) / 6) + 1) % 2;
+        }
+
+        $nama = $year.'/'.($semester == 1 ? 'GANJIL' : 'GENAP');
+        $tglMulai = now()->year($year)->month($semester == 1 ? 1 : 7)->startOfMonth();
+        $tglSelesai = now()->year($year)->month($semester == 1 ? 6 : 12)->endOfMonth();
 
         return Periode::create([
             'nama' => $nama,
-            'tgl_mulai' => $tgl_mulai,
-            'tgl_selesai' => $tgl_mulai->copy()->addMonth(6),
+            'tgl_mulai' => $tglMulai,
+            'tgl_selesai' => $tglSelesai,
             'no_sk' => fake()->numerify('SK-####-####'),
-            'tgl_sk' => $tgl_mulai,
+            'tgl_sk' => $tglMulai,
             'file_sk' => '',
             'nama_ketua_spi' => fake()->name(),
             'nip_ketua_spi' => fake()->numerify('################')
