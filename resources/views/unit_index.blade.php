@@ -45,7 +45,8 @@
                           Edit
                         </button>
                       </a>
-                      <a href="/unit_destroy/{{ $data->id }}">
+                      {{-- <a href="/unit_destroy/{{ $data->id }}"> --}}
+                      <a href="#">
                         <button type="button" class="btn btn-rounded btn-danger btn-fw">
                           Remove
                         </button>
