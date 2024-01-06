@@ -11,10 +11,11 @@
   <div class="col-lg-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Daftar Unit</h4>
+        <h3 class="font-weight-medium">Daftar Unit</h3>
         <a href="/unit_create">
-          <button type="button" class="btn btn-success btn-sm"> Tambah Unit </button>
+          <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit </button>
         </a> 
+        
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -37,18 +38,20 @@
                     <td> {{ $data->nama_pimpinan }} </td>
                     <td> {{ $data->nip_pimpinan }} </td>
                     <td> {{-- FOR BUTTONS --}}
-                      <button type="button" class="btn btn-rounded btn-primary btn-fw">
-                        View
-                      </button>
+                      <a href="/unit_detail/{{ $data->id }}">
+                        <button type="button" class="btn btn-rounded btn-icons btn-primary">
+                          <i class="mdi mdi-eye"></i>
+                        </button>
+                      </a>
                       <a href="/unit_edit/{{ $data->id }}">
-                        <button type="button" class="btn btn-rounded btn-dark btn-fw">
-                          Edit
+                        <button type="button" class="btn btn-rounded btn-icons btn-dark">
+                          <i class="mdi mdi-pencil"></i>
                         </button>
                       </a>
                       {{-- <a href="/unit_destroy/{{ $data->id }}"> --}}
                       <a href="#">
-                        <button type="button" class="btn btn-rounded btn-danger btn-fw">
-                          Remove
+                        <button type="button" class="btn btn-rounded btn-icons btn-danger">
+                          <i class="mdi mdi-delete"></i>
                         </button>
                       </a>
                       {{-- <form action="/"></form> --}}

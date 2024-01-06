@@ -46,7 +46,8 @@ Route::get('/unit_create', [UnitController::class, 'create']);
 Route::post('/unit_create', [UnitController::class, 'store']);
 Route::get('/unit_edit/{unit}', [UnitController::class, 'edit']);
 Route::post('/unit_update/{unit}', [UnitController::class, 'update']);
-Route::get('/unit_destroy/{unit}', [UnitController::class, 'destroy']);
+// Route::get('/unit_destroy/{unit}', [UnitController::class, 'destroy']);
+Route::get('/unit_detail/{unit}', [UnitController::class, 'inspect']);
 
 
 Route::get('/billing_index', function () {
