@@ -52,7 +52,9 @@ class UnitController extends Controller
      */
     public function show(Unit $unit)
     {
-        //
+        return view('/unit_detail', [
+            'data' => $unit
+        ]);
     }
 
     /**

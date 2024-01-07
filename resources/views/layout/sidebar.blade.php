@@ -13,102 +13,182 @@
                 <small class="designation text-muted">Manager</small>
                 <span class="status-indicator online"></span>
               </a>
-              <div class="dropdown-menu" aria-labelledby="UsersettingsDropdown">
-                <a class="dropdown-item p-0">
-                  <div class="d-flex border-bottom">
-                    <div class="py-3 px-4 d-flex align-items-center justify-content-center">
-                      <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i>
-                    </div>
-                    <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right">
-                      <i class="mdi mdi-account-outline mr-0 text-gray"></i>
-                    </div>
-                    <div class="py-3 px-4 d-flex align-items-center justify-content-center">
-                      <i class="mdi mdi-alarm-check mr-0 text-gray"></i>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item mt-2"> Manage Accounts </a>
-                <a class="dropdown-item"> Change Password </a>
-                <a class="dropdown-item"> Check Inbox </a>
-                <a class="dropdown-item"> Sign Out </a>
-              </div>
             </div>
           </div>
         </div>
-        <button class="btn btn-success btn-block">New Project <i class="mdi mdi-plus"></i>
-        </button>
       </div>
     </li>
-    {{-- <li class="nav-item {{  active_class(['/'])  }} ">
-      <a class="nav-link" href="{{ url('/') }}">
+    -------- ADMIN --------
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
         <i class="menu-icon mdi mdi-television"></i>
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
-    <li class="nav-item  {{ active_class(['basic-ui/*']) }}">
-      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="{{ is_active_route(['basic-ui/*']) }}" aria-controls="basic-ui">
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Standar</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/periode_index">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Periode</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/unit_index">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Unit</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/unitaudit_index">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Unit Audit</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Putusan Audit</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">User</span>
+      </a>
+    </li>
+    -------- AUDITOR --------
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Standar</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Unit Audit</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Tim Auditor</span>
+      </a>
+    </li>
+    <li class="nav-item  ">
+      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
         <i class="menu-icon mdi mdi-dna"></i>
-        <span class="menu-title">Basic UI Elements</span>
+        <span class="menu-title">Proses Audit</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse {{ show_class(['basic-ui/*']) }}" id="basic-ui">
+      <div class="collapse " id="basic-ui">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item {{ active_class(['basic-ui/buttons']) }}">
-            <a class="nav-link" href="{{ url('/basic-ui/buttons') }}">Buttons</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Submisi {{-- (subklausul & file upload) --}}</a>
           </li>
-          <li class="nav-item {{ active_class(['basic-ui/dropdowns']) }}">
-            <a class="nav-link" href="{{ url('/basic-ui/dropdowns') }}">Dropdowns</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Analisa</a>
           </li>
-          <li class="nav-item {{ active_class(['basic-ui/typography']) }}">
-            <a class="nav-link" href="{{ url('/basic-ui/typography') }}">Typography</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Temuan</a>
           </li>
         </ul>
       </div>
+    </li>
+    <li class="nav-item  ">
+      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+        <i class="menu-icon mdi mdi-dna"></i>
+        <span class="menu-title">Proses Pasca Audit</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse " id="basic-ui">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Submisi lanjutan {{-- (respon temuan & file upload lanjutan) --}}</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Analisa Lanjutan</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Finalisasi Audit</span>
+      </a>
     </li>
 
-    <li class="nav-item {{ active_class(['charts/chartjs']) }}">
-      <a class="nav-link" href="{{ url('/charts/chartjs') }}">
-        <i class="menu-icon mdi mdi-chart-line"></i>
-        <span class="menu-title">Charts</span>
+
+    -------- AUDITEE --------
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Dashboard</span>
       </a>
     </li>
-    <li class="nav-item {{ active_class(['tables/basic-table']) }}">
-      <a class="nav-link" href="{{ url('/tables/basic-table') }}">
-        <i class="menu-icon mdi mdi-table-large"></i>
-        <span class="menu-title">Tables</span>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Panduan</span>
       </a>
     </li>
-    <li class="nav-item {{ active_class(['icons/material']) }}">
-      <a class="nav-link" href="{{ url('/icons/material') }}">
-        <i class="menu-icon mdi mdi-emoticon"></i>
-        <span class="menu-title">Icons</span>
-      </a>
-    </li>
-    <li class="nav-item {{ active_class(['user-pages/*']) }}">
-      <a class="nav-link" data-toggle="collapse" href="#user-pages" aria-expanded="{{ is_active_route(['user-pages/*']) }}" aria-controls="user-pages">
-        <i class="menu-icon mdi mdi-lock-outline"></i>
-        <span class="menu-title">User Pages</span>
+    <li class="nav-item  ">
+      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+        <i class="menu-icon mdi mdi-dna"></i>
+        <span class="menu-title">Proses Audit</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse {{ show_class(['user-pages/*']) }}" id="user-pages">
+      <div class="collapse " id="basic-ui">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item {{ active_class(['user-pages/login']) }}">
-            <a class="nav-link" href="{{ url('/user-pages/login') }}">Login</a>
-          </li>
-          <li class="nav-item {{ active_class(['user-pages/register']) }}">
-            <a class="nav-link" href="{{ url('/user-pages/register') }}">Register</a>
-          </li>
-          <li class="nav-item {{ active_class(['user-pages/lock-screen']) }}">
-            <a class="nav-link" href="{{ url('/user-pages/lock-screen') }}">Lock Screen</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</a>
           </li>
         </ul>
       </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="https://www.bootstrapdash.com/demo/star-laravel-free/documentation/documentation.html" target="_blank">
-        <i class="menu-icon mdi mdi-file-outline"></i>
-        <span class="menu-title">Documentation</span>
+    <li class="nav-item  ">
+      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+        <i class="menu-icon mdi mdi-dna"></i>
+        <span class="menu-title">Proses Pasca Audit</span>
+        <i class="menu-arrow"></i>
       </a>
-    </li> --}}
+      <div class="collapse " id="basic-ui">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Temuan</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Respon Temuan</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Submisi Lanjutan {{-- (plus dikasi liat analisa lanjutan kalo dah dibuat) --}}</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Pembayaran</span>
+      </a>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Hasil Audit</span>
+      </a>
+    </li>
   </ul>
 </nav>

@@ -11,9 +11,9 @@
   <div class="col-lg-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h3 class="font-weight-medium">Daftar Unit</h3>
-        <a href="/unit_create">
-          <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit </button>
+        <h3 class="font-weight-medium">Daftar Periode</h3>
+        <a href="/periode_create">
+          <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Periode </button>
         </a> 
         
         <div class="table-responsive">
@@ -21,10 +21,10 @@
             <thead>
               <tr>
                 <th> # </th>
-                <th> Nama </th>
-                <th> Alamat </th>
-                <th> Nama Pimpinan </th>
-                <th> NIP Pimpinan </th>
+                <th> Nama Periode</th>
+                <th> Periode </th>
+                <th> Nomor SK </th>
+                <th> Nama Ketua SPI </th>
                 <th> Aksi </th>
               </tr>
             </thead>
@@ -34,21 +34,21 @@
                   <tr>
                     <td class="font-weight-medium"> {{ $loop->iteration }}</td>
                     <td> {{ $data->nama }} </td>
-                    <td> {{ $data->alamat }} </td>
-                    <td> {{ $data->nama_pimpinan }} </td>
-                    <td> {{ $data->nip_pimpinan }} </td>
+                    <td> {{ $data->tgl_mulai }} s.d. {{ $data->tgl_selesai }}</td>
+                    <td> {{ $data->no_sk }} </td>
+                    <td> {{ $data->nama_ketua_spi }} </td>
                     <td> {{-- FOR BUTTONS --}}
-                      <a href="/unit_detail/{{ $data->id }}">
+                      <a href="/periode_detail/{{ $data->id }}">
                         <button type="button" class="btn btn-rounded btn-icons btn-primary">
                           <i class="mdi mdi-eye"></i>
                         </button>
                       </a>
-                      <a href="/unit_edit/{{ $data->id }}">
+                      <a href="/periode_edit/{{ $data->id }}">
                         <button type="button" class="btn btn-rounded btn-icons btn-dark">
                           <i class="mdi mdi-pencil"></i>
                         </button>
                       </a>
-                      {{-- <a href="/unit_destroy/{{ $data->id }}"> --}}
+                      {{-- <a href="/periode_destroy/{{ $data->id }}"> --}}
                       <a href="#">
                         <button type="button" class="btn btn-rounded btn-icons btn-danger">
                           <i class="mdi mdi-delete"></i>
