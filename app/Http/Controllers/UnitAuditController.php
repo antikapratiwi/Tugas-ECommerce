@@ -12,7 +12,10 @@ class UnitAuditController extends Controller
      */
     public function index()
     {
-        //
+        $unitaudits = UnitAudit::latest()->get();
+        return view('/unitaudit_index', [
+            'main_data' => $unitaudits
+        ]);
     }
 
     /**

@@ -11,9 +11,9 @@
   <div class="col-lg-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h3 class="font-weight-medium">Daftar Unit</h3>
+        <h3 class="font-weight-medium">Daftar Unit Audit</h3>
         <a href="/unit_create">
-          <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit </button>
+          <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit Audit </button>
         </a> 
         
         <div class="table-responsive">
@@ -21,10 +21,10 @@
             <thead>
               <tr>
                 <th> # </th>
-                <th> Nama </th>
-                <th> Alamat </th>
-                <th> Nama Pimpinan </th>
-                <th> NIP Pimpinan </th>
+                <th> Nama Unit Audit</th>
+                <th> Standar</th>
+                <th> Deskripsi </th>
+                <th> Status </th>
                 <th> Aksi </th>
               </tr>
             </thead>
@@ -33,10 +33,16 @@
                 @foreach ($main_data as $data)
                   <tr>
                     <td class="font-weight-medium"> {{ $loop->iteration }}</td>
-                    <td> {{ $data->nama }} </td>
-                    <td> {{ $data->alamat }} </td>
-                    <td> {{ $data->nama_pimpinan }} </td>
-                    <td> {{ $data->nip_pimpinan }} </td>
+                    <td> {{ $data->periode->nama }} - {{ $data->unit->nama }} </td>
+                    <td> {{ $data->standar->nama }} </td>
+                    <td> {{ $data->deskripsi }} </td>
+                    <td> 
+                      @if($data->status == "selesai")
+                        <div class="badge badge-success badge-rounded p-2">Selesai</div>
+                        @elseif($data->status == "belum selesai")
+                        <div class="badge badge-warning badge-rounded p-2">Belum Selesai</div>
+                      @endif
+                    </td>
                     <td> {{-- FOR BUTTONS --}}
                       <a href="/unit_detail/{{ $data->id }}">
                         <button type="button" class="btn btn-rounded btn-icons btn-primary">

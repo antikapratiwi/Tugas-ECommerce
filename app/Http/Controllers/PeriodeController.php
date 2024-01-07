@@ -12,7 +12,10 @@ class PeriodeController extends Controller
      */
     public function index()
     {
-        //
+        $periodes = Periode::latest()->get();
+        return view("periode_index", [
+            'main_data' => $periodes
+        ]);
     }
 
     /**
@@ -20,7 +23,7 @@ class PeriodeController extends Controller
      */
     public function create()
     {
-        //
+        return view("periode_create");
     }
 
     /**
@@ -28,7 +31,22 @@ class PeriodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // TODO: validation
+
+        $x = Periode::create([
+            // 'id' => $request,
+            'nama' => $request->nama,
+            'tgl_mulai' => $request->tgl_mulai,
+            'tgl_selesai' => $request->tgl_selesai,
+            'no_sk' => $request->no_sk,
+            'tgl_sk' => $request->tgl_sk,
+            'file_sk' => $request->file('file_sk')->getClientOriginalName(),
+            'nama_ketua_spi' => $request->nama_ketua_spi,
+            'nip_ketua_spi' => $request->nip_ketua_spi,
+        ]);
+
+        return redirect('/periode_index');
     }
 
     /**
@@ -36,7 +54,9 @@ class PeriodeController extends Controller
      */
     public function show(Periode $periode)
     {
-        //
+        return view('/periode_detail', [
+            'data' => $periode
+        ]);
     }
 
     /**
@@ -44,7 +64,9 @@ class PeriodeController extends Controller
      */
     public function edit(Periode $periode)
     {
-        //
+        return view('/periode_edit', [
+            'data' => $periode
+        ]);
     }
 
     /**
@@ -52,7 +74,19 @@ class PeriodeController extends Controller
      */
     public function update(Request $request, Periode $periode)
     {
-        //
+        // TODO: validation
+        Periode::where('id', $periode->id)->update([
+            'nama' => $request->nama,
+            'tgl_mulai' => $request->tgl_mulai,
+            'tgl_selesai' => $request->tgl_selesai,
+            'no_sk' => $request->no_sk,
+            'tgl_sk' => $request->tgl_sk,
+            'file_sk' => $request->file('file_sk')->getClientOriginalName(),
+            'nama_ketua_spi' => $request->nama_ketua_spi,
+            'nip_ketua_spi' => $request->nip_ketua_spi,
+        ]);
+        
+        return redirect('/periode_index');
     }
 
     /**
