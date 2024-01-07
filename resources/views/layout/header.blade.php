@@ -129,7 +129,15 @@
           <a class="dropdown-item mt-2"> Manage Accounts </a>
           <a class="dropdown-item"> Change Password </a>
           <a class="dropdown-item"> Check Inbox </a>
-          <a class="dropdown-item"> Sign Out </a>
+          <!-- <a class="dropdown-item"> Sign Out </a> -->
+          <form role="form" method="post" action="{{ route('logout') }}" id="logout-form">
+                        @csrf
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                            class="dropdown-item">
+                            Sign Out
+                        </a>
+          </form>
         </div>
       </li>
     </ul>

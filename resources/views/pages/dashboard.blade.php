@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @push('plugin-styles')
-  {!! Html::style('/assets/plugins/plugin.css') !!} 
+  <!-- {!! Html::style('/assets/plugins/plugin.css') !!} -->
 @endpush
 
 @section('content')
@@ -554,7 +554,7 @@
 @push('plugin-scripts')
   {!! Html::script('/assets/plugins/chartjs/chart.min.js') !!}
   {!! Html::script('/assets/plugins/jquery-sparkline/jquery.sparkline.min.js') !!}
-@endpush --}}
+@endpush
 
 @push('custom-scripts')
   {!! Html::script('/assets/js/dashboard.js') !!}
