@@ -58,6 +58,16 @@ Route::post('/periode_update/{periode}', [PeriodeController::class, 'update']);
 // Route::get('/periode_destroy/{periode}', [PeriodeController::class, 'destroy']);
 Route::get('/periode_detail/{periode}', [PeriodeController::class, 'show']);
 
+// ============== UNIT AUDIT
+Route::get('/unitaudit_index', [UnitAuditController::class, 'index']);
+Route::get('/unitaudit_create', [UnitAuditController::class, 'create']);
+Route::post('/unitaudit_create', [UnitAuditController::class, 'store']);
+Route::get('/unitaudit_edit/{unit}', [UnitAuditController::class, 'edit']);
+Route::post('/unitaudit_update/{unit}', [UnitAuditController::class, 'update']);
+// Route::get('/unitaudit_destroy/{unit}', [UnitAuditController::class, 'destroy']);
+Route::get('/unitaudit_detail/{unit}', [UnitAuditController::class, 'show']);
+
+
 
 Route::get('/billing_index', function () {
     return view('billing_index');
