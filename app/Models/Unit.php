@@ -21,6 +21,7 @@ class Unit extends Model
         'id'
     ];
     protected $table = "unit";
+    // protected $editable
 
     // TODO users tipenya harus AUDITEE
     public function users(){ return $this->hasMany(User::class);}

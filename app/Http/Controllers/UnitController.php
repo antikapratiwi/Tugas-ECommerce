@@ -72,19 +72,13 @@ class UnitController extends Controller
     public function update(Request $request, Unit $unit)
     {
         // TODO: validation
-        dd($request);
-        $rules = [];
-
-        $validatedRequest = $request->validate($rules);
-
-        // Unit::where('id', $request->id)->update([
-        //     'nama' => $request->nama,
-        //     'alamat' => $request->alamat,
-        //     'nama_pimpinan' => $request->nama_pimpinan,
-        //     'nip_pimpinan' => $request->nip_pimpinan
-        // ]);
-        Unit::where('id', $unit->id)->update($validatedRequest);
-
+        Unit::where('id', $unit->id)->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'nama_pimpinan' => $request->nama_pimpinan,
+            'nip_pimpinan' => $request->nip_pimpinan
+        ]);
+        
         return redirect('/unit_index');
     }
 

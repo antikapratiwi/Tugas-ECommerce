@@ -22,6 +22,6 @@ class Standar extends Model
     ];
     protected $table = "standar";
 
-    public function unit_audits(){ return $this->hasMany(UnitAudit::class);}
-    public function klausuls(){ return $this->hasMany(Klausul::class);}
+    public function unit_audits(){ return $this->hasMany(UnitAudit::class, 'id_standar');}
+    public function klausuls(){ return $this->hasMany(Klausul::class, 'id_standar');}
 }
