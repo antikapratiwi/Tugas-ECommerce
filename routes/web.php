@@ -39,12 +39,12 @@ use App\Http\Controllers\GeneralController;
 
 
 Route::middleware(['web', 'auth'])->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    });
+
     // Your protected routes here
 });
-
+Route::get('/', function () {
+    return view('dashboard');
+});
 
 Route::get('/login', [AuthenticationController::class, 'show'])->name('login');
 Route::post('/login', [AuthenticationController::class, 'login']);
@@ -90,5 +90,3 @@ Route::get('/billing_index', function () {
 Route::get('/analisa_index', function () {
     return view('analisa_index');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
