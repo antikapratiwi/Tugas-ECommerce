@@ -6,7 +6,7 @@
 
 @section('content')
 
-@dd(session())
+{{-- @dd(session()) --}}
 {{-- @dd(Auth::user()) --}}
 
 <div class="row"> {{-- asdasd --}}

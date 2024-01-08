@@ -82,7 +82,8 @@ Route::post('/unitaudit_select/{unitAudit}', [UnitAuditController::class, 'selec
 Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
 
 // ============== SUBMISI
-Route::get('/submisi_index', [SubmisiController::class, 'index']);
+Route::get('/submisi_index', [SubmisiController::class, 'index_audit']);
+Route::get('/submisilanjutan_index', [SubmisiController::class, 'index_postaudit']);
 
 // ============== ANALISA & TEMUAN
 Route::get('/analisa_index', [AnalisaController::class, 'index']);
