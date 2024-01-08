@@ -21,5 +21,5 @@ class Pembayaran extends Model
     ];
     protected $table = "pembayaran";
 
-    public function billing(){ return $this->belongsTo(Billing::class);}
+    public function billing(){ return $this->belongsTo(Billing::class, "id_billing");}
 }

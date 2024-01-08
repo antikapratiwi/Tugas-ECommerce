@@ -21,5 +21,5 @@ class Periode extends Model
     ];
     protected $table = "periode";
 
-    public function unit_audits(){ return $this->hasMany(UnitAudit::class);}
+    public function unit_audits(){ return $this->hasMany(UnitAudit::class, "id_periode");}
 }

@@ -21,5 +21,5 @@ class PutusanAudit extends Model
     ];
     protected $table = "putusan_audit";
 
-    public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
+    public function unit_audit(){ return $this->belongsTo(UnitAudit::class, "id_unit_audit");}
 }

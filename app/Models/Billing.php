@@ -22,6 +22,6 @@ class Billing extends Model
     ];
     protected $table = "billing";
 
-    public function pembayarans(){ return $this->hasMany(Pembayaran::class);}
-    public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
+    public function pembayarans(){ return $this->hasMany(Pembayaran::class, "id_billing");}
+    public function unit_audit(){ return $this->belongsTo(UnitAudit::class, "id_unit_audit");}
 }

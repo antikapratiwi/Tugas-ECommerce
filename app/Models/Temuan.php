@@ -22,6 +22,6 @@ class Temuan extends Model
     ];
     protected $table = "temuan";
 
-    public function analisa(){ return $this->belongsTo(Analisa::class);}
-    public function respon_temuan(){ return $this->hasOne(ResponTemuan::class);}
+    public function analisa(){ return $this->belongsTo(Analisa::class, "id_analisa");}
+    public function respon_temuan(){ return $this->hasOne(ResponTemuan::class, "id_temuan");}
 }

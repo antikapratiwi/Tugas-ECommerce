@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-use App\Models\SubKlausul;
+use App\Models\SubKlausulAudit;
 use App\Models\Temuan;
 use App\Models\AnalisaLanjutan;
 
@@ -26,7 +26,7 @@ class Analisa extends Model
 
     // ORM RELATIONSHIPS
 
-    public function sub_klausul_audit(){ return $this->belongsTo(SubKlausul::class);}
-    public function temuan(){ return $this->hasOne(Temuan::class);}
-    public function analisa_lanjutan(){ return $this->hasOne(AnalisaLanjutan::class);}
+    public function sub_klausul_audit(){ return $this->belongsTo(SubKlausulAudit::class, "id_sub_klausul_audit");}
+    public function temuan(){ return $this->hasOne(Temuan::class, "id_analisa");}
+    public function analisa_lanjutan(){ return $this->hasOne(AnalisaLanjutan::class, "id_analisa");}
 }

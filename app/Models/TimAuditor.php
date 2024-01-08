@@ -23,6 +23,6 @@ class TimAuditor extends Model
     protected $table = "tim_auditor";
 
     // TODO: users  tipenya harus AUDITOR
-    public function users(){ return $this->hasMany(User::class);}
-    public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
+    public function users(){ return $this->hasMany(User::class, "id_user");}
+    public function unit_audit(){ return $this->belongsTo(UnitAudit::class, "id_unit_audit");}
 }

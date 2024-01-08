@@ -30,8 +30,8 @@ class UnitAudit extends Model
     public function periode(){ return $this->belongsTo(Periode::class, 'id_periode');}
     public function unit(){ return $this->belongsTo(Unit::class, 'id_unit');}
     public function standar(){ return $this->belongsTo(Standar::class, 'id_standar');}
-    public function tim_auditor(){ return $this->hasOne(TimAuditor::class);}
-    public function putusan_audit(){ return $this->hasOne(PutusanAudit::class);}
-    public function billing(){ return $this->hasOne(Billing::class);}
-    public function klausul_audits(){ return $this->hasMany(KlausulAudit::class);}
+    public function tim_auditor(){ return $this->hasOne(TimAuditor::class, "id_unit_audit");}
+    public function putusan_audit(){ return $this->hasOne(PutusanAudit::class, "id_unit_audit");}
+    public function billing(){ return $this->hasOne(Billing::class, "id_unit_audit");}
+    public function klausul_audits(){ return $this->hasMany(KlausulAudit::class, "id_unit_audit");}
 }

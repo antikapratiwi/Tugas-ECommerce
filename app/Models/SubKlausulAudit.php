@@ -23,7 +23,7 @@ class SubKlausulAudit extends Model
     ];
     protected $table = "sub_klausul_audit";
 
-    public function klausul_audit(){ return $this->belongsTo(KlausulAudit::class);}
-    public function file_upload(){ return $this->hasOne(FileUpload::class);}
-    public function analisa(){ return $this->hasOne(Analisa::class);}
+    public function klausul_audit(){ return $this->belongsTo(KlausulAudit::class, "id_klausul_audit");}
+    public function file_upload(){ return $this->hasOne(FileUpload::class, "id_sub_klausul_audit");}
+    public function analisa(){ return $this->hasOne(Analisa::class, "id_sub_klausul_audit");}
 }

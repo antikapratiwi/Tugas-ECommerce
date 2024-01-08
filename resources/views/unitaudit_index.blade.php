@@ -50,10 +50,17 @@
                     <td> {{-- FOR BUTTONS --}}
                       <div class="container">
                         <div class="row align-items-center">
-                          <form class="m-0 mr-1" method="post" enctype="multipart/form-data" action="/unitaudit_select/{{ $data->id }}">
-                            @csrf
-                            <button type="submit" class="btn btn-info btn-sm"> Pilih </button>
-                          </form>
+                          @if($session_unit_audit === "(belum dipilih)" || $session_unit_audit !== ($data->periode->nama . " - " . $data->unit->nama))
+                            <form class="m-0 mr-1" method="post" enctype="multipart/form-data" action="/unitaudit_select/{{ $data->id }}">
+                              @csrf
+                              <button type="submit" class="btn btn-info btn-sm"> Pilih </button>
+                            </form>
+                          @else
+                            <form class="m-0 mr-1" method="post" enctype="multipart/form-data" action="/unitaudit_unselect">
+                              @csrf
+                              <button type="submit" class="btn btn-danger btn-sm"> Lepas </button>
+                            </form>
+                          @endif
     
                           <a href="/unit_detail/{{ $data->id }}">
                             <button type="button" class="mr-1 btn btn-rounded btn-icons btn-primary">

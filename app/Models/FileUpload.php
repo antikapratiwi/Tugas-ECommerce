@@ -21,5 +21,5 @@ class FileUpload extends Model
     ];
     protected $table = "file_upload";
 
-    public function sub_klausul_audit(){ return $this->belongsTo(SubKlausulAudit::class);}
+    public function sub_klausul_audit(){ return $this->belongsTo(SubKlausulAudit::class, "id_sub_klausul_audit");}
 }

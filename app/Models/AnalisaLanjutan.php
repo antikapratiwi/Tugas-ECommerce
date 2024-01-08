@@ -22,6 +22,6 @@ class AnalisaLanjutan extends Model
     ];
     protected $table = "analisa_lanjutan";
 
-    public function analisa(){ return $this->belongsTo(Analisa::class);}
-    public function respon_temuan(){ return $this->belongsTo(ResponTemuan::class);}
+    public function analisa(){ return $this->belongsTo(Analisa::class, "id_analisa");}
+    public function respon_temuan(){ return $this->belongsTo(ResponTemuan::class, "id_respon_temuan");}
 }

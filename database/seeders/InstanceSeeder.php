@@ -140,9 +140,10 @@ class InstanceSeeder extends Seeder
             'slug' => $slug,
             'nama' => $nama,
             'deskripsi' => fake()->sentence(),
-            'file_pedoman' => '',
+            'file_pedoman' => 'file_pedoman.pdf',
             'instruksi_file_upload' => fake()->sentence(),
-            'format_file_upload' => fake()->randomElement(['pdf', 'image'])
+            // 'format_file_upload' => fake()->randomElement(['pdf', 'image'])
+            'format_file_upload' => 'pdf'
         ]);
     }
 }

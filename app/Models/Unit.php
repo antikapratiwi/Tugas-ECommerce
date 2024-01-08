@@ -24,6 +24,6 @@ class Unit extends Model
     // protected $editable
 
     // TODO users tipenya harus AUDITEE
-    public function users(){ return $this->hasMany(User::class);}
-    public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
+    public function users(){ return $this->hasMany(User::class, "id_unit_auditee");}
+    // public function unit_audit(){ return $this->belongsTo(UnitAudit::class, "id_unit_audit");}
 }
