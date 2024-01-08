@@ -140,9 +140,9 @@ class AuditSeeder extends Seeder
         $temuan = Temuan::create([
             'id_analisa' => $analisa->id,
             'jenis' => fake()->randomElement(['major', 'minor']),
-            'penyebab' => implode('|', fake()->sentences(3)),
-            'akibat' => implode('|', fake()->sentences(3)),
-            'rekomendasi_tindak_lanjut' => implode('|', fake()->sentences(3))
+            'penyebab' => fake()->sentence(),
+            'akibat' => fake()->sentence(),
+            'rekomendasi_tindak_lanjut' => fake()->sentence()
         ]);
 
         $this->createResponTemuan($temuan, $analisa, $unitAudit, $comply, $done);

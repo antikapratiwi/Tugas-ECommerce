@@ -18,6 +18,12 @@
         </div>
       </div>
     </li>
+    <li class="nav-item"> 
+      <a class="nav-link" href="/login">
+        <i class="menu-icon mdi mdi-television"></i>
+        <span class="menu-title">Login</span>
+      </a>
+    </li>
     -------- ADMIN --------
     <li class="nav-item"> 
       <a class="nav-link" href="/">
@@ -98,10 +104,10 @@
             <a class="nav-link" href="/submisi_index">Submisi {{-- (subklausul & file upload) --}}</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">Analisa</a>
+            <a class="nav-link" href="/analisa_index">Analisa</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">Temuan</a>
+            <a class="nav-link" href="/temuan_index">Temuan</a>
           </li>
         </ul>
       </div>

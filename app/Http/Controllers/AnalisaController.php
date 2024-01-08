@@ -7,15 +7,31 @@ use App\Models\Temuan;
 use App\Models\SubKlausulAudit;
 use Illuminate\Http\Request;
 
+use App\Libraries\Helper;
+
 class AnalisaController extends Controller
 {
     // /**
     //  * Display a listing of the resource.
     //  */
-    // public function index()
-    // {
-    //     //
-    // }
+    public function index()
+    {
+        session()->put(['id_unit_audit' => 3]);
+        // dd("hello");
+
+        $session_unit_audit = Helper::GetUnitAuditInSession(true);
+
+        if($session_unit_audit === null)
+        {
+            return redirect('/unitaudit_index');
+        }
+
+        $klausul_audits = $session_unit_audit->klausul_audits;
+
+        return view("analisa_index", [
+            'main_data' => $klausul_audits
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.
