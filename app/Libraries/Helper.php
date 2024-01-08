@@ -34,10 +34,10 @@ class Helper
         $formatter = new NumberFormatter('id_ID', NumberFormatter::CURRENCY);
         return $formatter->formatCurrency($number, 'IDR');
     }
+
     public static function SetUnitAuditInSession($id_unit_audit)
     {
         session(['id_unit_audit' => $id_unit_audit]);
-
         if (session('id_unit_audit', 0) === 0) {
             // ERROR OCCURED
             return false;

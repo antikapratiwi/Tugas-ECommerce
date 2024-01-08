@@ -6,6 +6,7 @@
 
 @section('content')
 
+{{ dd(session()) }}
 
 <div class="row"> {{-- asdasd --}}
   <div class="col-lg-12 grid-margin">

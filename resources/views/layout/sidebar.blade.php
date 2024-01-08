@@ -101,7 +101,7 @@
       <div class="collapse " id="toggle1">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
-            <a class="nav-link" href="/submisi_index">Submisi {{-- (subklausul & file upload) --}}</a>
+            <a class="nav-link" href="/submisi_index">Submisi L{-- (subklausul & file upload) --}}</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/analisa_index">Analisa</a>
@@ -121,7 +121,10 @@
       <div class="collapse " id="toggle2">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
-            <a class="nav-link" href="/">Submisi lanjutan {{-- (respon temuan & file upload lanjutan) --}}</a>
+            <a class="nav-link" href="/respontemuan_index">Respon Temuan</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Submisi Lanjutan {{-- (respon temuan & file upload lanjutan) --}}</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/">Analisa Lanjutan</a>
@@ -161,6 +164,9 @@
           <li class="nav-item ">
             <a class="nav-link" href="/">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">File Upload</a>
+          </li>
         </ul>
       </div>
     </li>
@@ -180,6 +186,9 @@
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/">Submisi Lanjutan {{-- (plus dikasi liat analisa lanjutan kalo dah dibuat) --}}</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/">File Upload Lanjutan</a>
           </li>
         </ul>
       </div>

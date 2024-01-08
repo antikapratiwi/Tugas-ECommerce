@@ -25,15 +25,20 @@
               </tr>
             </thead>
             <tbody>
+              @php
+                $index = 0;
+              @endphp
               @foreach ($main_data as $klausul_audit)
                 @foreach($klausul_audit->sub_klausul_audits as $sub_klausul_audit)
                   @php
+                    $index++;
+
                     $analisa = $sub_klausul_audit->analisa
                   @endphp
 
                   @if(isset($analisa))
                   <tr>
-                    <td class="font-weight-medium"> {{ $loop->iteration }}</td>
+                    <td class="font-weight-medium"> {{ $index }}</td>
                     <td> {{ $analisa->deskripsi }} </td>
                     <td> {{ $analisa->kondisi_awal }} </td>
                     <td> {{ $analisa->dasar_evaluasi }} </td>

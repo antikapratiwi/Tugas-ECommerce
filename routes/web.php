@@ -91,6 +91,8 @@ Route::post('/analisa_create', [AnalisaController::class, 'store']); //include c
 Route::get('/temuan_index', [TemuanController::class, 'index']);
 
 
+// ============== RESPON TEMUAN
+Route::get('/respontemuan_index', [ResponTemuanController::class, 'index']);
 
 
 // ============== AUDITEE

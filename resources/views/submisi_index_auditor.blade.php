@@ -6,6 +6,8 @@
 
 @section('content')
 
+@dd(session())
+{{-- @dd(Auth::user()) --}}
 
 <div class="row"> {{-- asdasd --}}
   <div class="col-lg-12 grid-margin">

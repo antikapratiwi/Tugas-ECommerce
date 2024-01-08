@@ -25,6 +25,9 @@
               </tr>
             </thead>
             <tbody>
+              @php
+                $index = 0;
+              @endphp
               @foreach ($main_data as $klausul_audit)
                 @foreach($klausul_audit->sub_klausul_audits as $sub_klausul_audit)
                   @php
@@ -35,8 +38,11 @@
                       $temuan = $analisa->temuan
                     @endphp
                     @if(isset($temuan))
+                      @php
+                        $index++;
+                      @endphp
                       <tr>
-                        <td class="font-weight-medium"> {{ $loop->iteration }}</td>
+                        <td class="font-weight-medium"> {{ $index }}</td>
                         <td> {{ $temuan->jenis }} </td>
                         <td> {{ $temuan->penyebab }} </td>
                         <td> {{ $temuan->akibat }} </td>

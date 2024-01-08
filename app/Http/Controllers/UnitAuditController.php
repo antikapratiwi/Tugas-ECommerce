@@ -15,7 +15,7 @@ class UnitAuditController extends Controller
      */
     public function index()
     {
-        session()->put(['id_unit_audit' => 1]);
+        // session()->put(['id_unit_audit' => 1]);
 
         $unitaudits = UnitAudit::latest()->get();
         return view('/unitaudit_index', [
@@ -74,6 +74,7 @@ class UnitAuditController extends Controller
     public function select(UnitAudit $unitAudit)
     {
         $succeed = Helper::SetUnitAuditInSession($unitAudit->id);
+        // dd(session());
         if($succeed)
         {
             return redirect('/unitaudit_index');

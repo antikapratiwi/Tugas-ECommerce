@@ -17,7 +17,7 @@
             {{-- {{ Auth::user()->nama }} --}}
             Richard V.Welsh
           </span>
-                  <img class="img-xs rounded-circle" src="{{ url('assets/images/faces/face8.jpg') }}" alt="Profile image">
+              <img class="img-xs rounded-circle" src="{{ url('assets/images/faces/face8.jpg') }}" alt="Profile image">
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                   <form action="/logout" method="post">
