@@ -32,7 +32,6 @@
       @include('layout.sidebar')
       <div class="main-panel">
         <div class="content-wrapper">
-<<<<<<< HEAD
 
           @if (session()->has('alert'))
           <div class="alert alert-{{ session()->get('alert')['type'] }}" role="alert">
@@ -41,8 +40,6 @@
           @endif
 
 
-=======
->>>>>>> 44ab182f6ec7e99cb1ab30b9b217da901dd05115
           @yield('content')
         </div>
         @include('layout.footer')
