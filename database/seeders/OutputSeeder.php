@@ -32,17 +32,19 @@ class OutputSeeder extends Seeder
 
         $payments = fake()->randomElement([1, 2, 3, 5]);
         $paid = $status === 'lunas' ? $payments : ($payments - 1);
-
+        echo $status . ' ' . $paid . ' ' . $payments . "\n";
+        $sisa_tagihan = $status == 'lunas' ? 0 : ($price / $payments);
         $billing = Billing::create([
             'id_unit_audit' => $unitAudit->id,
             'nomor' => fake()->numerify('INV-######'),
             'file_invoice' => '',
-            'sisa_tagihan' => $status == 'lunas' ? 0 : ($price / $payments),
+            'total_tagihan' => $price,
+            'sisa_tagihan' =>   $sisa_tagihan,
             'status' => $status
         ]);
 
         for ($i = 0; $i < $paid; $i++) {
-            $this->createPembayaran($billing, $price / $payments);
+            $this->createPembayaran($billing, ($price - $sisa_tagihan) / $payments);
         }
 
         return $billing;

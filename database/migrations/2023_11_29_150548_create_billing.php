@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_unit_audit');
             $table->string('nomor');
             $table->string('file_invoice');
+            $table->string('total_tagihan');
             $table->integer('sisa_tagihan');
             $table->string('status'); // lunas, belum_lunas
             $table->timestamps();
