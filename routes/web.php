@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AnalisaController;
 use App\Http\Controllers\AnalisaLanjutanController;
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BillingController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\FileUploadLanjutanController;
@@ -37,9 +38,18 @@ use App\Http\Controllers\SubmisiController;
 |
 */
 
+
+Route::middleware(['web', 'auth'])->group(function () {
+
+    // Your protected routes here
+});
 Route::get('/', function () {
     return view('dashboard');
 });
+
+Route::get('/login', [AuthenticationController::class, 'show'])->name('login');
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 
 // ============== UNIT
 Route::get('/unit_index', [UnitController::class, 'index']);
