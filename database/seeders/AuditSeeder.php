@@ -15,6 +15,11 @@ use App\Models\Temuan;
 use App\Models\ResponTemuan;
 use App\Models\AnalisaLanjutan;
 use App\Models\PutusanAudit;
+
+use App\Models\FileUpload;
+use App\Models\FileUploadLanjutan;
+
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
@@ -84,12 +89,14 @@ class AuditSeeder extends Seeder
 
                     if (!$comply) {
                         if ($done) {
-                            $this->createAnalisa($subKlausulAudit, $unitAudit, $i < count($klausul->sub_klausuls) / 2);
+                            $this->createAnalisa($subKlausulAudit, $unitAudit, $i < count($klausul->sub_klausuls) / 2, $done);
                         } else {
-                            $this->createAnalisa($subKlausulAudit, $unitAudit, fake()->boolean());
+                            $this->createAnalisa($subKlausulAudit, $unitAudit, fake()->boolean(), $done);
                         }
                     } else {
-                        $this->createAnalisa($subKlausulAudit, $unitAudit, true);
+                        $this->createAnalisa($subKlausulAudit, $unitAudit, true, $done);
+
+                        $this->createFileUpload($subKlausulAudit->id);
                     }
                 }
             }
@@ -111,7 +118,7 @@ class AuditSeeder extends Seeder
         ]);
     }
 
-    public function createAnalisa($subKlausulAudit, $unitAudit, $comply)
+    public function createAnalisa($subKlausulAudit, $unitAudit, $comply, $done)
     {
         $analisa = Analisa::create([
             'id_sub_klausul_audit' => $subKlausulAudit->id,
@@ -122,13 +129,13 @@ class AuditSeeder extends Seeder
         ]);
 
         if (!$analisa->mematuhi_standar) {
-            $this->createTemuan($analisa, $unitAudit);
+            $this->createTemuan($analisa, $unitAudit, $comply, $done);
         }
 
         return $analisa;
     }
 
-    public function createTemuan($analisa, $unitAudit)
+    public function createTemuan($analisa, $unitAudit, $comply, $done)
     {
         $temuan = Temuan::create([
             'id_analisa' => $analisa->id,
@@ -138,12 +145,12 @@ class AuditSeeder extends Seeder
             'rekomendasi_tindak_lanjut' => implode('|', fake()->sentences(3))
         ]);
 
-        $this->createResponTemuan($temuan, $analisa, $unitAudit);
+        $this->createResponTemuan($temuan, $analisa, $unitAudit, $comply, $done);
 
         return $temuan;
     }
 
-    public function createResponTemuan($temuan, $analisa, $unitAudit)
+    public function createResponTemuan($temuan, $analisa, $unitAudit, $comply, $done)
     {
         $responTemuan = ResponTemuan::create([
             'id_temuan' => $temuan->id,
@@ -153,6 +160,11 @@ class AuditSeeder extends Seeder
         ]);
 
         $this->createAnalisaLanjutan($responTemuan, $analisa);
+
+        if($done)
+        {
+            $this->createFileUploadLanjutan($responTemuan->id);
+        }
 
         return $responTemuan;
     }
@@ -180,4 +192,28 @@ class AuditSeeder extends Seeder
             'keterangan' => fake()->paragraph()
         ]);
     }
+
+
+    public function createFileUpload($id_sub_klausul_audit)
+    {
+        $fileUpload = FileUpload::create([
+            'id_sub_klausul_audit' => $id_sub_klausul_audit,
+            'file' => 'file_upload.pdf',
+            'keterangan' => fake()->sentence()
+        ]);
+
+        return $fileUpload;
+    }
+
+    public function createFileUploadLanjutan($id_respon_temuan)
+    {
+        $fileUploadLanjutan = FileUploadLanjutan::create([
+            'id_respon_temuan' => $id_respon_temuan,
+            'file' => 'file_upload_lanjutan.pdf',
+            'keterangan' => fake()->sentence()
+        ]);
+
+        return $fileUploadLanjutan;
+    }
+    
 }

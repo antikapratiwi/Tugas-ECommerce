@@ -11,59 +11,61 @@
   <div class="col-lg-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h3 class="font-weight-medium">Submisi</h3>
-        <a href="/unit_create">
-          <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit </button>
-        </a> 
+        <h1 class="font-weight-medium mb-3">Submisi</h1>
+
+        @foreach($main_data as $klausul_audit)
+          <div class="mb-4">
+            <h3>{{ "[Klausul " . $loop->iteration . "] " . $klausul_audit->nama }}</h3>
+            <h4>{{ $klausul_audit->deskripsi }}</h4>
+            @if($klausul_audit->persyaratan == false)
+              <div class="badge badge-secondary badge-rounded p-2">Normatif</div>
+            @else
+              <div class="table">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="width: 10px"> # </th>
+                      <th scope="col" style="width: 300px"> Sub Klausul </th>
+                      <th scope="col" style="width: 75px"> File Pedoman </th>
+                      <th scope="col" style="width: 75px"> File Pembuktian </th>
+                      <th scope="col" style="width: 100px"> Analisa </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($klausul_audit->sub_klausul_audits as $sub_klausul_audit)
+                      <tr>
+                        <td class="font-weight-medium"> {{ $loop->iteration }}</td>
+                        <td> {{ $sub_klausul_audit->nama }} </td>
+                        <td> {{ $sub_klausul_audit->file_pedoman }} </td>
+                        <td> {{ $sub_klausul_audit->file_upload->file }} </td>
+                        <td> {{-- FOR BUTTONS --}}
+                          @if($sub_klausul_audit->analisa === null)
+                            @if($sub_klausul_audit->file_upload === null)
+                              <button disabled type="submit" class="btn btn-primary btn-sm">Rancang Analisa</button>
+                            @else
+                              <form action="/analisa_create/{{ $sub_klausul_audit->id }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <button type="submit" class="btn btn-primary btn-sm">Rancang Analisa</button>
+                              </form>
+                            @endif  
+                          @else
+                            <form action="/analisa_detail/{{ $sub_klausul_audit->analisa->id }}" method="post" enctype="multipart/form-data">
+                              @csrf
+                              <button type="submit" class="btn btn-info btn-sm">Lihat Analisa</button>
+                            </form>
+                          @endif
+                        </td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            @endif
+          </div>
+          
+        @endforeach
         
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th> # </th>
-                <th> Nama </th>
-                <th> Alamat </th>
-                <th> Nama Pimpinan </th>
-                <th> NIP Pimpinan </th>
-                <th> Aksi </th>
-              </tr>
-            </thead>
-            <tbody>
-              @if (isset($main_data) && count($main_data) != 0)
-                @foreach ($main_data as $data)
-                  <tr>
-                    <td class="font-weight-medium"> {{ $loop->iteration }}</td>
-                    <td> {{ $data->nama }} </td>
-                    <td> {{ $data->alamat }} </td>
-                    <td> {{ $data->nama_pimpinan }} </td>
-                    <td> {{ $data->nip_pimpinan }} </td>
-                    <td> {{-- FOR BUTTONS --}}
-                      <a href="/unit_detail/{{ $data->id }}">
-                        <button type="button" class="btn btn-rounded btn-icons btn-primary">
-                          <i class="mdi mdi-eye"></i>
-                        </button>
-                      </a>
-                      <a href="/unit_edit/{{ $data->id }}">
-                        <button type="button" class="btn btn-rounded btn-icons btn-dark">
-                          <i class="mdi mdi-pencil"></i>
-                        </button>
-                      </a>
-                      {{-- <a href="/unit_destroy/{{ $data->id }}"> --}}
-                      <a href="#">
-                        <button type="button" class="btn btn-rounded btn-icons btn-danger">
-                          <i class="mdi mdi-delete"></i>
-                        </button>
-                      </a>
-                      {{-- <form action="/"></form> --}}
-                    </td>
-                  </tr>
-                @endforeach
-              @else
-                <h3>Empty</h3>
-              @endif
-            </tbody>
-          </table>
-        </div>
+
       </div>
     </div>
   </div>
