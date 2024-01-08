@@ -16,7 +16,7 @@ class UnitController extends Controller
     {
         $units = Unit::latest()->get();
         return view("unit_index", [
-            'main_data' => $units
+            'main_data' => $units,
         ]);
     }
 
@@ -33,6 +33,7 @@ class UnitController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->session()->regenerate();
         // dd($request);
         // TODO: validation
 
