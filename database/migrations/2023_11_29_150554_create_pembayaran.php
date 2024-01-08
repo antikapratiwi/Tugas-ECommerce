@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_billing');
             $table->integer('nominal');
-            $table->string('bukti_bayar');
+            $table->string('bukti_bayar')->nullable();
             $table->string('keterangan');
             $table->timestamps();
         });

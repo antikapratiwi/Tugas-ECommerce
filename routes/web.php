@@ -88,8 +88,9 @@ Route::get('/submisi_index', [SubmisiController::class, 'index']);
 
 
 // ============== AUDITEE
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
-
+Route::get('/pembayaran_index', [PembayaranController::class, 'index']);
+Route::get('/pembayaran_create/{id_billing}', [PembayaranController::class, 'create']);
+Route::post('/pembayaran_create', [PembayaranController::class, 'store']);
 
 Route::get('/billing_index', function () {
     return view('billing_index');

@@ -61,7 +61,7 @@
           </div>
       </div>
       
-        <a href="/periode_create">
+        <a href="/pembayaran_create/{{ $data->id }}">
           <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Pembayaran </button>
         </a> 
         

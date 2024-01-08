@@ -23,7 +23,7 @@ class PembayaranController extends Controller
             $billing->pembayaran = $pembayaran;
         }
 
-        return view('pages.pembayaran', [
+        return view('pembayaran_index', [
             'main_data' => $billings,
         ]);
     }
@@ -31,9 +31,11 @@ class PembayaranController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id_billing)
     {
-        //
+        return view('pembayaran_create', [
+            'id_billing' => $id_billing,
+        ]);
     }
 
     /**
@@ -41,7 +43,23 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // insert
+        $pembayaran = Pembayaran::create([
+            'id_billing' => $request->id_billing,
+            'nominal' => $request->nominal,
+            'bukti_bayar' => $request->bukti_bayar,
+            'keterangan' => $request->keterangan,
+        ]);
+        $pembayaran->save();
+
+        // update billing
+        $billing = Billing::find($request->id_billing);
+        $billing->sisa_tagihan = $billing->sisa_tagihan - $request->nominal;
+        $billing->status = $billing->sisa_tagihan == 0 ? 'lunas' : 'belum lunas';
+        $billing->save();
+
+
+        return redirect('/pembayaran_index');
     }
 
     /**
