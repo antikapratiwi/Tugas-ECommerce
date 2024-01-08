@@ -47,15 +47,15 @@
           <div class="form-group">
             <h4 class="card-title">Mematuhi Standar</h4>
             <div class="input-group">
-              <select class="custom-select" name="mematuhi_standar">
-                {{-- <option selected>Pilih</option> --}}
+              <select class="custom-select" name="mematuhi_standar" onchange="showTemuan(this)">
                 <option value="1">Ya</option>
                 <option value="0">Tidak</option>
             </select>
             </div>
           </div>
 
-          <div class="card-body" id="create-temuan">
+          <div class="card-body p-2" id="create-temuan"  style="display: none">
+            <div style="border-left: 4px solid #ebedf2; padding-left: 16px">
             <h3 class="font-weight-medium">Rancang Temuan</h3>
             <div class="form-group">
               <h4 class="card-title">Jenis</h4>
@@ -85,7 +85,7 @@
               <div class="input-group">
                 <input type="text" placeholder="Rekomendasi Tindak Lanjut" class="form-control" id="rekomendasi_tindak_lanjut" name="rekomendasi_tindak_lanjut">
               </div>
-            </div>
+            </div></div>
           </div>
 
 
@@ -98,6 +98,16 @@
     </div>
   </div>
 </div>
+
+<script>
+  function showTemuan(select) {
+    if (select.value == 0) {
+      document.getElementById("create-temuan").style.display = "block";
+    } else {
+      document.getElementById("create-temuan").style.display = "none";
+    }
+  }
+</script>
 
 @endsection
 
