@@ -76,7 +76,7 @@ class UnitAuditController extends Controller
         $succeed = Helper::SetUnitAuditInSession($unitAudit->id);
         if($succeed)
         {
-            redirect('/unitaudit_index');
+            return redirect('/unitaudit_index');
         } else {
             dd($unitAudit);
         }
@@ -84,6 +84,7 @@ class UnitAuditController extends Controller
 
     public function unselect()
     {
-        
+        session()->forget('id_unit_audit');
+        return redirect('/unitaudit_index');
     }
 }
