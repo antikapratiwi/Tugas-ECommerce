@@ -37,9 +37,16 @@
                         <td class="font-weight-medium"> {{ $loop->iteration }}</td>
                         <td> {{ $sub_klausul_audit->nama }} </td>
                         <td> {{ $sub_klausul_audit->file_pedoman }} </td>
-                        <td> {{ $sub_klausul_audit->file_upload->file }} </td>
+                        <td>
+                          @if(isset($sub_klausul_audit->file_upload->file)) 
+                            {{ $sub_klausul_audit->file_upload->file }} 
+                          @else
+                            {{ " - " }}
+                          @endif
+                        </td>
                         <td> {{-- FOR BUTTONS --}}
                           @if($sub_klausul_audit->analisa === null)
+
                             @if($sub_klausul_audit->file_upload === null)
                               <button disabled type="submit" class="btn btn-primary btn-sm">Rancang Analisa</button>
                             @else
@@ -48,6 +55,7 @@
                                 <button type="submit" class="btn btn-primary btn-sm">Rancang Analisa</button>
                               </form>
                             @endif  
+
                           @else
                             <form action="/analisa_detail/{{ $sub_klausul_audit->analisa->id }}" method="post" enctype="multipart/form-data">
                               @csrf

@@ -84,6 +84,10 @@ Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
 // ============== SUBMISI (auditor)
 Route::get('/submisi_index', [SubmisiController::class, 'index']);
 
+// ============== ANALISA
+Route::post('/analisa_create/{subKlausulAudit}', [AnalisaController::class, 'create']);
+Route::post('/analisa_create', [AnalisaController::class, 'store']);
+
 
 
 

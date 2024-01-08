@@ -9,7 +9,7 @@ class SubmisiController extends Controller
 {
     public function index()
     {
-        session()->put(['id_unit_audit' => 1]);
+        session()->put(['id_unit_audit' => 3]);
 
         $session_unit_audit = Helper::GetUnitAuditInSession(true);
         if($session_unit_audit === null)
