@@ -15,6 +15,7 @@ class StandarController extends Controller
     {
         $standars = Standar::orderBy('created_at', 'desc')->paginate(8)->withQueryString();
         return view('auditor.standar.index', compact('standars'));
+        //
     }
 
     /**
@@ -23,6 +24,7 @@ class StandarController extends Controller
     public function create()
     {
         return view('auditor.standar.create');
+        //
     }
 
     /**
@@ -34,7 +36,7 @@ class StandarController extends Controller
         return redirect()->route('auditor.standar.index')->with('alert', [
             'type' => 'success',
             'message' => "Data $standar->nama created successfully!"
-        ]);;
+        ]);
     }
 
     /**
@@ -45,6 +47,7 @@ class StandarController extends Controller
         return view('auditor.standar.show', [
             'data' => $standar
         ]);
+        //
     }
 
     /**
@@ -55,6 +58,7 @@ class StandarController extends Controller
         return view('auditor.standar.edit', [
             'data' => $standar
         ]);
+        //
     }
 
     /**

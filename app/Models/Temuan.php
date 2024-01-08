@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\Analisa;
+use App\Models\ResponTemuan;
+
 class Temuan extends Model
 {
     use HasFactory;
@@ -17,4 +20,8 @@ class Temuan extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "temuan";
+
+    public function analisa(){ return $this->belongsTo(Analisa::class);}
+    public function respon_temuan(){ return $this->hasOne(ResponTemuan::class);}
 }

@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\UnitAudit;
+use App\Models\Klausul;
+
 class Standar extends Model
 {
     use HasFactory;
@@ -17,8 +20,7 @@ class Standar extends Model
     protected $guarded = [
         'id'
     ];
-<<<<<<< Updated upstream
-=======
+
 
     protected $dates = [
         'tgl_rilis'
@@ -28,5 +30,4 @@ class Standar extends Model
 
     public function unit_audits(){ return $this->hasMany(UnitAudit::class, 'id_standar');}
     public function klausuls(){ return $this->hasMany(Klausul::class, 'id_standar');}
->>>>>>> Stashed changes
 }

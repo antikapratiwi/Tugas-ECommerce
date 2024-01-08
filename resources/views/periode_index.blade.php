@@ -74,7 +74,11 @@
 @push('plugin-scripts')
   {!! Html::script('/assets/plugins/chartjs/chart.min.js') !!}
   {!! Html::script('/assets/plugins/jquery-sparkline/jquery.sparkline.min.js') !!}
+<<<<<<< HEAD
 @endpush
+=======
+@endpush --}}
+>>>>>>> 44ab182f6ec7e99cb1ab30b9b217da901dd05115
 
 @push('custom-scripts')
   {!! Html::script('/assets/js/dashboard.js') !!}

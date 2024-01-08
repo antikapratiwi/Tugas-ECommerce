@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\UnitAudit;
+
 class PutusanAudit extends Model
 {
     use HasFactory;
@@ -17,4 +19,7 @@ class PutusanAudit extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "putusan_audit";
+
+    public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
 }

@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\UnitAudit;
+
 class Periode extends Model
 {
     use HasFactory;
@@ -17,4 +19,7 @@ class Periode extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "periode";
+
+    public function unit_audits(){ return $this->hasMany(UnitAudit::class);}
 }

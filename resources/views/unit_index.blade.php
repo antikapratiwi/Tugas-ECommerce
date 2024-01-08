@@ -12,7 +12,11 @@
     <div class="card">
       <div class="card-body">
         <h3 class="font-weight-medium">Daftar Unit</h3>
+<<<<<<< HEAD
         <a href="{{  route('unit.create') }}">
+=======
+        <a href="/unit_create">
+>>>>>>> 44ab182f6ec7e99cb1ab30b9b217da901dd05115
           <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit </button>
         </a> 
         
@@ -38,12 +42,20 @@
                     <td> {{ $data->nama_pimpinan }} </td>
                     <td> {{ $data->nip_pimpinan }} </td>
                     <td> {{-- FOR BUTTONS --}}
+<<<<<<< HEAD
                       <a href="{{ route('unit.show', $data) }}">
+=======
+                      <a href="/unit_detail/{{ $data->id }}">
+>>>>>>> 44ab182f6ec7e99cb1ab30b9b217da901dd05115
                         <button type="button" class="btn btn-rounded btn-icons btn-primary">
                           <i class="mdi mdi-eye"></i>
                         </button>
                       </a>
+<<<<<<< HEAD
                       <a href="{{ route('unit.edit', $data) }}">
+=======
+                      <a href="/unit_edit/{{ $data->id }}">
+>>>>>>> 44ab182f6ec7e99cb1ab30b9b217da901dd05115
                         <button type="button" class="btn btn-rounded btn-icons btn-dark">
                           <i class="mdi mdi-pencil"></i>
                         </button>

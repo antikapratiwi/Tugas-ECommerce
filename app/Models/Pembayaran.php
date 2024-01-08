@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\Billing;
+
 class Pembayaran extends Model
 {
     use HasFactory;
@@ -17,4 +19,7 @@ class Pembayaran extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "pembayaran";
+
+    public function billing(){ return $this->belongsTo(Billing::class);}
 }

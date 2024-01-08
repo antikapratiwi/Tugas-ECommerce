@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\PeriodeController;
+use App\Http\Controllers\StandarController;
+use App\Http\Controllers\UnitAuditController;
+use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +18,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
     return view('dashboard');
 });
 
 // ============== UNIT
-// Route::get('/unit_index', [UnitController::class, 'index']);
-// Route::get('/unit_create', [UnitController::class, 'create']);
-// Route::post('/unit_create', [UnitController::class, 'store']);
-// Route::get('/unit_edit/{unit}', [UnitController::class, 'edit']);
-// Route::post('/unit_update/{unit}', [UnitController::class, 'update']);
-// // Route::get('/unit_destroy/{unit}', [UnitController::class, 'destroy']);
-// Route::get('/unit_detail/{unit}', [UnitController::class, 'show']);
-
-Route::resource('unit', UnitController::class);
+Route::get('/unit_index', [UnitController::class, 'index']);
+Route::get('/unit_create', [UnitController::class, 'create']);
+Route::post('/unit_create', [UnitController::class, 'store']);
+Route::get('/unit_edit/{unit}', [UnitController::class, 'edit']);
+Route::post('/unit_update/{unit}', [UnitController::class, 'update']);
+// Route::get('/unit_destroy/{unit}', [UnitController::class, 'destroy']);
+Route::get('/unit_detail/{unit}', [UnitController::class, 'show']);
 
 // ============== AUDITOR
 Route::group([

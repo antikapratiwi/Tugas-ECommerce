@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\Standar;
+use App\Models\SubKlausul;
+
 class Klausul extends Model
 {
     use HasFactory;
@@ -17,4 +20,8 @@ class Klausul extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "klausul";
+
+    public function standar(){ return $this->belongsTo(Standar::class, 'id_standar');}
+    public function sub_klausuls(){ return $this->hasMany(SubKlausul::class, 'id_klausul');}
 }

@@ -38,7 +38,7 @@
       </a>
     </li>
     <li class="nav-item"> 
-      <a class="nav-link" href="{{ route('unit.index') }}">
+      <a class="nav-link" href="/unit_index">
         <i class="menu-icon mdi mdi-television"></i>
         <span class="menu-title">Unit</span>
       </a>

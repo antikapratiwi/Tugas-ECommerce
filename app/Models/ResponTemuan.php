@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+use App\Models\Temuan;
+use App\Models\AnalisaLanjutan;
+use App\Models\FileUploadLanjutan;
+
 class ResponTemuan extends Model
 {
     use HasFactory;
@@ -17,4 +21,9 @@ class ResponTemuan extends Model
     protected $guarded = [
         'id'
     ];
+    protected $table = "respon_temuan";
+
+    public function temuan(){ return $this->belongsTo(Temuan::class);}
+    public function analisa_lanjutan(){ return $this->hasOne(AnalisaLanjutan::class);}
+    public function file_upload_lanjutan(){ return $this->hasOne(FileUploadLanjutan::class);}
 }
