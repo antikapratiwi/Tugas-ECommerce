@@ -87,12 +87,12 @@
       </a>
     </li>
     <li class="nav-item  ">
-      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+      <a class="nav-link" data-toggle="collapse" href="#toggle1" aria-expanded="" aria-controls="toggle1">
         <i class="menu-icon mdi mdi-dna"></i>
         <span class="menu-title">Proses Audit</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse " id="basic-ui">
+      <div class="collapse " id="toggle1">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
             <a class="nav-link" href="/">Submisi {{-- (subklausul & file upload) --}}</a>
@@ -107,12 +107,12 @@
       </div>
     </li>
     <li class="nav-item  ">
-      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+      <a class="nav-link" data-toggle="collapse" href="#toggle2" aria-expanded="" aria-controls="toggle2">
         <i class="menu-icon mdi mdi-dna"></i>
         <span class="menu-title">Proses Pasca Audit</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse " id="basic-ui">
+      <div class="collapse " id="toggle2">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
             <a class="nav-link" href="/">Submisi lanjutan {{-- (respon temuan & file upload lanjutan) --}}</a>
@@ -145,12 +145,12 @@
       </a>
     </li>
     <li class="nav-item  ">
-      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+      <a class="nav-link" data-toggle="collapse" href="#toggle3" aria-expanded="" aria-controls="toggle3">
         <i class="menu-icon mdi mdi-dna"></i>
         <span class="menu-title">Proses Audit</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse " id="basic-ui">
+      <div class="collapse " id="toggle3">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
             <a class="nav-link" href="/">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</a>
@@ -159,12 +159,12 @@
       </div>
     </li>
     <li class="nav-item  ">
-      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="" aria-controls="basic-ui">
+      <a class="nav-link" data-toggle="collapse" href="#toggle4" aria-expanded="" aria-controls="toggle4">
         <i class="menu-icon mdi mdi-dna"></i>
         <span class="menu-title">Proses Pasca Audit</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse " id="basic-ui">
+      <div class="collapse " id="toggle4">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
             <a class="nav-link" href="/">Temuan</a>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\UnitAudit;
 use Illuminate\Http\Request;
 
+use App\Libraries\Helper;
+
+
 class UnitAuditController extends Controller
 {
     /**
@@ -12,9 +15,13 @@ class UnitAuditController extends Controller
      */
     public function index()
     {
+        session(['id_unit_audit' => 1]);
+        $session_unit_audit = Helper::GetUnitAuditInSession();
+
         $unitaudits = UnitAudit::latest()->get();
         return view('/unitaudit_index', [
-            'main_data' => $unitaudits
+            'main_data' => $unitaudits,
+            'session_unit_audit' => $session_unit_audit
         ]);
     }
 
@@ -64,5 +71,15 @@ class UnitAuditController extends Controller
     public function destroy(UnitAudit $unitAudit)
     {
         //
+    }
+
+    public function select()
+    {
+
+    }
+
+    public function unselect()
+    {
+        
     }
 }
