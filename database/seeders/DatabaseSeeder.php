@@ -12,11 +12,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+<<<<<<< Updated upstream
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+=======
+        $this->call([
+            UnitSeeder::class,
+            PeriodeSeeder::class,
+            StandarSeeder::class
+        ]);
+>>>>>>> Stashed changes
     }
 }

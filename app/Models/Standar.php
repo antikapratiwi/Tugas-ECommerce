@@ -17,4 +17,16 @@ class Standar extends Model
     protected $guarded = [
         'id'
     ];
+<<<<<<< Updated upstream
+=======
+
+    protected $dates = [
+        'tgl_rilis'
+    ];
+    
+    protected $table = "standar";
+
+    public function unit_audits(){ return $this->hasMany(UnitAudit::class, 'id_standar');}
+    public function klausuls(){ return $this->hasMany(Klausul::class, 'id_standar');}
+>>>>>>> Stashed changes
 }
