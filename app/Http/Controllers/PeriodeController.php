@@ -14,7 +14,7 @@ class PeriodeController extends Controller
     {
         $periodes = Periode::latest()->get();
         return view("periode_index", [
-            'main_data' => $periodes
+            'main_data' => $periodes,
         ]);
     }
 

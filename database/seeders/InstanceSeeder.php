@@ -82,7 +82,7 @@ class InstanceSeeder extends Seeder
     public function createUnit()
     {
         return Unit::create([
-            'nama' => fake()->city(),
+            'nama' => fake()->company(),
             'alamat' => fake()->address(),
             'nama_pimpinan' => fake()->name(),
             'nip_pimpinan' => fake()->numerify('################')

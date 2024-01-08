@@ -16,52 +16,10 @@
           <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit Audit </button>
         </a> 
 
-        <div class="container">
-          <div class="row align-items-center">
-            <h4 class="mb-0 font-weight-medium mr-2">
-              Unit Audit Terpilih:
-            </h4>
+        @include('components.unitaudit-state-alt')
 
-            @if($session_unit_audit === "(belum dipilih)")
-              <div class="badge badge-warning badge-rounded p-2 mr-2">
-                {{ $session_unit_audit }}
-              </div>
-
-              <form class="m-0" method="post" enctype="multipart/form-data" action="/unitaudit_select">
-                <button type="submit" class="btn btn-primary btn-sm"> Pilih </button>
-              </form>
-            @else
-              <div class="display-5 badge badge-secondary badge-rounded p-2 mr-2">
-                {{ $session_unit_audit }}
-              </div>
-
-              <form class="m-0" method="post" enctype="multipart/form-data" action="/unitaudit_unselect">
-                <button type="submit" class="btn btn-danger btn-sm"> Lepas </button>
-              </form>
-            @endif
-          </div>
-        </div>
-        
-        {{-- <h4 class="font-weight-medium">
-          Unit Audit Terpilih: 
-
-          @if($session_unit_audit === "(belum dipilih)")
-            <div class="badge badge-warning badge-rounded p-2">
-              {{ $session_unit_audit }}
-            </div>
-          @else
-            <div class="badge badge-secondary badge-rounded p-2">
-              {{ $session_unit_audit }}
-            </div>
-          @endif
-
-          <form method="post" enctype="multipart/form-data" action="/unitaudit_unselect">
-            <button type="submit" class="btn btn-primary btn-sm"> Pilih </button>
-          </form>
-        </h4> --}}
-        
-        
-
+        {{-- {{ dd(\Illuminate\Support\Facades\Log::info(session()->getId())); }} --}}
+        {{-- {{ dd(session()->isStarted()) }} --}}
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -90,23 +48,33 @@
                       @endif
                     </td>
                     <td> {{-- FOR BUTTONS --}}
-                      <a href="/unit_detail/{{ $data->id }}">
-                        <button type="button" class="btn btn-rounded btn-icons btn-primary">
-                          <i class="mdi mdi-eye"></i>
-                        </button>
-                      </a>
-                      <a href="/unit_edit/{{ $data->id }}">
-                        <button type="button" class="btn btn-rounded btn-icons btn-dark">
-                          <i class="mdi mdi-pencil"></i>
-                        </button>
-                      </a>
-                      {{-- <a href="/unit_destroy/{{ $data->id }}"> --}}
-                      <a href="#">
-                        <button type="button" class="btn btn-rounded btn-icons btn-danger">
-                          <i class="mdi mdi-delete"></i>
-                        </button>
-                      </a>
-                      {{-- <form action="/"></form> --}}
+                      <div class="container">
+                        <div class="row align-items-center">
+                          <form class="m-0 mr-1" method="post" enctype="multipart/form-data" action="/unitaudit_select/{{ $data->id }}">
+                            @csrf
+                            <button type="submit" class="btn btn-info btn-sm"> Pilih </button>
+                          </form>
+    
+                          <a href="/unit_detail/{{ $data->id }}">
+                            <button type="button" class="mr-1 btn btn-rounded btn-icons btn-primary">
+                              <i class="mdi mdi-eye"></i>
+                            </button>
+                          </a>
+                          <a href="/unit_edit/{{ $data->id }}">
+                            <button type="button" class="mr-1 btn btn-rounded btn-icons btn-dark">
+                              <i class="mdi mdi-pencil"></i>
+                            </button>
+                          </a>
+                          {{-- <a href="/unit_destroy/{{ $data->id }}"> --}}
+                          <a href="#">
+                            <button type="button" class="mr-1 btn btn-rounded btn-icons btn-danger">
+                              <i class="mdi mdi-delete"></i>
+                            </button>
+                          </a>
+                          {{-- <form action="/"></form> --}}
+                        </div>
+                      </div>
+                      
                     </td>
                   </tr>
                 @endforeach

@@ -67,7 +67,7 @@ Route::post('/unitaudit_update/{unit}', [UnitAuditController::class, 'update']);
 // Route::get('/unitaudit_destroy/{unit}', [UnitAuditController::class, 'destroy']);
 Route::get('/unitaudit_detail/{unit}', [UnitAuditController::class, 'show']);
 
-Route::post('/unitaudit_select', [UnitAuditController::class, 'select']);
+Route::post('/unitaudit_select/{unitAudit}', [UnitAuditController::class, 'select']);
 Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
 
 

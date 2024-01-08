@@ -28,4 +28,17 @@ class Helper
             );
         }
     }
+
+    public static function SetUnitAuditInSession($id_unit_audit)
+    {
+        session(['id_unit_audit' => $id_unit_audit]);
+
+        if(session('id_unit_audit', 0) === 0)
+        {
+            // ERROR OCCURED
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
