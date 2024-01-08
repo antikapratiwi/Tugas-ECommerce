@@ -81,12 +81,14 @@ Route::get('/unitaudit_detail/{unit}', [UnitAuditController::class, 'show']);
 Route::post('/unitaudit_select/{unitAudit}', [UnitAuditController::class, 'select']);
 Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
 
-// ============== SUBMISI (auditor)
+// ============== SUBMISI
 Route::get('/submisi_index', [SubmisiController::class, 'index']);
 
-// ============== ANALISA
-Route::post('/analisa_create/{subKlausulAudit}', [AnalisaController::class, 'create']);
-Route::post('/analisa_create', [AnalisaController::class, 'store']);
+// ============== ANALISA & TEMUAN
+Route::get('/analisa_index', [AnalisaController::class, 'index']);
+Route::post('/analisa_create/{subKlausulAudit}', [AnalisaController::class, 'create']); //include create Temuan
+Route::post('/analisa_create', [AnalisaController::class, 'store']); //include create Temuan
+Route::get('/temuan_index', [TemuanController::class, 'index']);
 
 
 
@@ -100,6 +102,3 @@ Route::get('/billing_index', function () {
     return view('billing_index');
 });
 
-Route::get('/analisa_index', function () {
-    return view('analisa_index');
-});

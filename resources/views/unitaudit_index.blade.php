@@ -43,7 +43,7 @@
                     <td> 
                       @if($data->status == "selesai")
                         <div class="badge badge-success badge-rounded p-2">Selesai</div>
-                        @elseif($data->status == "belum selesai")
+                      @elseif($data->status == "belum selesai")
                         <div class="badge badge-warning badge-rounded p-2">Belum Selesai</div>
                       @endif
                     </td>
@@ -53,21 +53,23 @@
                           @if($session_unit_audit === "(belum dipilih)" || $session_unit_audit !== ($data->periode->nama . " - " . $data->unit->nama))
                             <form class="m-0 mr-1" method="post" enctype="multipart/form-data" action="/unitaudit_select/{{ $data->id }}">
                               @csrf
-                              <button type="submit" class="btn btn-info btn-sm"> Pilih </button>
+                              <button type="submit" class="btn btn-info btn-sm px-2"> Pilih </button>
                             </form>
                           @else
                             <form class="m-0 mr-1" method="post" enctype="multipart/form-data" action="/unitaudit_unselect">
                               @csrf
-                              <button type="submit" class="btn btn-danger btn-sm"> Lepas </button>
+                              <button type="submit" class="btn btn-danger btn-sm px-2"> Lepas </button>
                             </form>
                           @endif
     
-                          <a href="/unit_detail/{{ $data->id }}">
+                          {{-- <a href="/unitaudit_detail/{{ $data->id }}"> --}}
+                          <a href="#">
                             <button type="button" class="mr-1 btn btn-rounded btn-icons btn-primary">
                               <i class="mdi mdi-eye"></i>
                             </button>
                           </a>
-                          <a href="/unit_edit/{{ $data->id }}">
+                          {{-- <a href="/unitaudit_edit/{{ $data->id }}"> --}}
+                          <a href="#">
                             <button type="button" class="mr-1 btn btn-rounded btn-icons btn-dark">
                               <i class="mdi mdi-pencil"></i>
                             </button>

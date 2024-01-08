@@ -45,23 +45,23 @@
                           @endif
                         </td>
                         <td> {{-- FOR BUTTONS --}}
-                          @if($sub_klausul_audit->analisa === null)
+                          {{-- @if($sub_klausul_audit->analisa === null)
 
                             @if($sub_klausul_audit->file_upload === null)
                               <button disabled type="submit" class="btn btn-primary btn-sm">Rancang Analisa</button>
-                            @else
+                            @else --}}
                               <form action="/analisa_create/{{ $sub_klausul_audit->id }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <button type="submit" class="btn btn-primary btn-sm">Rancang Analisa</button>
                               </form>
-                            @endif  
+                            {{-- @endif   --}}
 
-                          @else
+                          {{-- @else
                             <form action="/analisa_detail/{{ $sub_klausul_audit->analisa->id }}" method="post" enctype="multipart/form-data">
                               @csrf
                               <button type="submit" class="btn btn-info btn-sm">Lihat Analisa</button>
                             </form>
-                          @endif
+                          @endif --}}
                         </td>
                       </tr>
                     @endforeach
