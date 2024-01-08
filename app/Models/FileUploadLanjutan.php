@@ -21,5 +21,5 @@ class FileUploadLanjutan extends Model
     ];
     protected $table = "file_upload_lanjutan";
 
-    public function respon_temuan(){ return $this->belongsTo(ResponTemuan::class);}
+    public function respon_temuan(){ return $this->belongsTo(ResponTemuan::class, "id_respon_temuan");}
 }

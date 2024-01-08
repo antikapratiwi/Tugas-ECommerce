@@ -95,7 +95,7 @@
       <div class="collapse " id="toggle1">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
-            <a class="nav-link" href="/">Submisi {{-- (subklausul & file upload) --}}</a>
+            <a class="nav-link" href="/submisi_index">Submisi {{-- (subklausul & file upload) --}}</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/">Analisa</a>

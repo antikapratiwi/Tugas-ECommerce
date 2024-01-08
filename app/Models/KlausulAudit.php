@@ -22,6 +22,6 @@ class KlausulAudit extends Model
     ];
     protected $table = "klausul_audit"; 
 
-    public function unit_audit(){ return $this->belongsTo(UnitAudit::class);}
-    public function sub_klausul_audits(){ return $this->hasMany(SubKlausulAudit::class);}
+    public function unit_audit(){ return $this->belongsTo(UnitAudit::class, "id_unit_audit");}
+    public function sub_klausul_audits(){ return $this->hasMany(SubKlausulAudit::class, "id_klausul_audit");}
 }

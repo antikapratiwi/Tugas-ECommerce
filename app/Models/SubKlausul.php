@@ -21,5 +21,5 @@ class SubKlausul extends Model
     ];
     protected $table = "sub_klausul";
 
-    public function klausul(){ return $this->belongsTo(Klausul::class);}
+    public function klausul(){ return $this->belongsTo(Klausul::class, "id_klausul");}
 }

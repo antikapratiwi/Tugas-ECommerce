@@ -23,7 +23,7 @@ class ResponTemuan extends Model
     ];
     protected $table = "respon_temuan";
 
-    public function temuan(){ return $this->belongsTo(Temuan::class);}
-    public function analisa_lanjutan(){ return $this->hasOne(AnalisaLanjutan::class);}
-    public function file_upload_lanjutan(){ return $this->hasOne(FileUploadLanjutan::class);}
+    public function temuan(){ return $this->belongsTo(Temuan::class, "id_temuan");}
+    public function analisa_lanjutan(){ return $this->hasOne(AnalisaLanjutan::class, "id_respon_temuan");}
+    public function file_upload_lanjutan(){ return $this->hasOne(FileUploadLanjutan::class, "id_respon_temuan");}
 }

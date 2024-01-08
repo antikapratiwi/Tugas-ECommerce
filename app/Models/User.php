@@ -24,7 +24,8 @@ class User extends Model
 
     // TODO hanya bisa diakses kalo user tipe AUDITOR
     
-    public function tim_auditor(){ return $this->belongsTo(TimAuditor::class);}
+    // public function tim_auditor(){ return $this->belongsTo(TimAuditor::class, "id_tim_auditor");}
+
     // TODO hanya bisa diakses kalo user tipe AUDITEE
-    public function unit(){ return $this->belongsTo(Unit::class);}
+    // public function unit(){ return $this->belongsTo(Unit::class, "id_unit");}
 }

@@ -23,6 +23,7 @@ use App\Http\Controllers\UnitAuditController;
 use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\SubmisiController;
 
 
 /*
@@ -69,6 +70,10 @@ Route::get('/unitaudit_detail/{unit}', [UnitAuditController::class, 'show']);
 
 Route::post('/unitaudit_select/{unitAudit}', [UnitAuditController::class, 'select']);
 Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
+
+// ============== SUBMISI (auditor)
+Route::get('/submisi_index', [SubmisiController::class, 'index']);
+
 
 
 
