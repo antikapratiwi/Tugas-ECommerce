@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< Updated upstream
-    return view('welcome');
-=======
     return view('dashboard');
 });
 
@@ -68,5 +65,4 @@ Route::get('/billing_index', function () {
 
 Route::get('/analisa_index', function () {
     return view('analisa_index');
->>>>>>> Stashed changes
 });
