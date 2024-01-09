@@ -98,6 +98,7 @@ Route::get('/submisilanjutan_index_auditee', [SubmisiController::class, 'index_p
 Route::get('/fileuploadlanjutan_index', [FileUploadLanjutanController::class, 'index']);
 Route::post('/fileuploadlanjutan_create/{responTemuan}', [FileUploadLanjutanController::class, 'create']);
 Route::post('/fileuploadlanjutan_store', [FileUploadLanjutanController::class, 'store']);
+Route::get('/finalisasiaudit_hasil', [SubmisiController::class, 'hasil_audit']);
 
 
 // ============== ANALISA, ANALISA LANJUTAN, & TEMUAN

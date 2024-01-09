@@ -92,4 +92,22 @@ class SubmisiController extends Controller
             'main_data' => $klausul_audits
         ]);
     }
+
+    public function hasil_audit()
+    {
+        session()->put(['id_unit_audit' => 1]);
+
+        $session_unit_audit = Helper::GetUnitAuditInSession(true);
+        if($session_unit_audit === null)
+        {
+            return redirect('/unitaudit_index');
+        }
+
+        // $klausul_audits = $session_unit_audit->klausul_audits;
+
+        return view("hasilaudit_index", [
+            // 'main_data' => $klausul_audits
+            'main_data' => $session_unit_audit
+        ]);
+    }
 }
