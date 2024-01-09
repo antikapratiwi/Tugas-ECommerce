@@ -36,6 +36,10 @@ class AuthenticationController extends Controller
         $user = User::where(['email' => $request->input('email')])->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
+            if ($user->tipe === 'admin') {
+                session(['actions' => 'self']);
+            }
+
             $request->authenticate();
             $request->session()->regenerate();
             Log::info('Logged in');
@@ -57,5 +61,14 @@ class AuthenticationController extends Controller
         $request->session()->invalidate();
 
         return redirect($this->loggedOutRedirectTo);
+    }
+
+    public function actions(Request $request)
+    {
+        $mode = $request->input('mode');
+
+        session(['actions' => $mode]);
+
+        return redirect('/');
     }
 }

@@ -15,24 +15,26 @@
         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <span class="profile-text d-none d-md-inline-flex">
             @if(isset($current_authenticated_user))
-              {{"ada" }}
+                {{ $current_authenticated_user->nama }}
             @else
-              {{"gaada" }}
+                You are logged out
             @endif
           </span>
               <img class="img-xs rounded-circle" src="{{ url('assets/images/faces/face8.jpg') }}" alt="Profile image">
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                  <form action="/logout" method="post">
-                      @csrf
-                      <button class="dropdown-item">Log Out</button>
-                  </form>
-              </div>
+                @auth
+                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                      <form action="/logout" method="post">
+                          @csrf
+                          <button class="dropdown-item">Log Out</button>
+                      </form>
+                  </div>
+                @endauth
       </li>
   </ul>
     <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
         <span class="mdi mdi-menu icon-menu"></span>
     </button>
-  
+
   </div>
 </nav>

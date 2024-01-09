@@ -4,6 +4,7 @@ namespace App\Libraries;
 
 use App\Models\UnitAudit;
 use NumberFormatter;
+use Illuminate\Support\Facades\Auth;
 
 class Helper
 {
