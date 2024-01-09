@@ -182,16 +182,16 @@
       <div class="collapse " id="toggle4">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
-            <a class="nav-link" href="/">Temuan</a>
+            <a class="nav-link" href="/temuan_index_auditee">Temuan</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">Respon Temuan</a>
+            <a class="nav-link" href="/respontemuan_index_auditee">Respon Temuan</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">Submisi Lanjutan {{-- (plus dikasi liat analisa lanjutan kalo dah dibuat) --}}</a>
+            <a class="nav-link" href="/submisilanjutan_index_auditee">Submisi Lanjutan {{-- (plus dikasi liat analisa lanjutan kalo dah dibuat) --}}</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">File Upload Lanjutan</a>
+            <a class="nav-link" href="/fileuploadlanjutan_index">File Upload Lanjutan</a>
           </li>
         </ul>
       </div>

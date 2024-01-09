@@ -93,7 +93,11 @@ Route::get('/submisi_index_auditee', [SubmisiController::class, 'index_audit_aud
 Route::get('/fileupload_index', [FileUploadController::class, 'index']);
 Route::post('/fileupload_create/{subKlausulAudit}', [FileUploadController::class, 'create']);
 Route::post('/fileupload_store', [FileUploadController::class, 'store']);
+Route::get('/submisilanjutan_index_auditee', [SubmisiController::class, 'index_postaudit_auditee']);
 
+Route::get('/fileuploadlanjutan_index', [FileUploadLanjutanController::class, 'index']);
+Route::post('/fileuploadlanjutan_create/{responTemuan}', [FileUploadLanjutanController::class, 'create']);
+Route::post('/fileuploadlanjutan_store', [FileUploadLanjutanController::class, 'store']);
 
 
 // ============== ANALISA, ANALISA LANJUTAN, & TEMUAN
@@ -106,11 +110,15 @@ Route::post('/analisalanjutan_create/{responTemuan}', [AnalisaLanjutanController
 Route::post('/analisalanjutan_create', [AnalisaLanjutanController::class, 'store']); 
 
 Route::get('/analisa_index_auditee', [AnalisaController::class, 'index_auditee']);
+Route::get('/temuan_index_auditee', [TemuanController::class, 'index_auditee']);
 
 
 
 // ============== RESPON TEMUAN
 Route::get('/respontemuan_index', [ResponTemuanController::class, 'index']);
+Route::get('/respontemuan_index_auditee', [ResponTemuanController::class, 'index_auditee']);
+Route::post('/respontemuan_create/{temuan}', [ResponTemuanController::class, 'create']);
+Route::post('/respontemuan_store', [ResponTemuanController::class, 'store']);
 
 
 // ============== AUDITEE
