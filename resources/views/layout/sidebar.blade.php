@@ -162,7 +162,7 @@
       <div class="collapse " id="toggle3">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item ">
-            <a class="nav-link" href="/">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</a>
+            <a class="nav-link" href="/submisi_index_auditee">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/">File Upload</a>

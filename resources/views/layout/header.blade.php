@@ -14,8 +14,11 @@
       <li class="nav-item dropdown d-none d-xl-inline-block">
         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <span class="profile-text d-none d-md-inline-flex">
-            {{-- {{ Auth::user()->nama }} --}}
-            Richard V.Welsh
+            @if(isset($current_authenticated_user))
+              {{"ada" }}
+            @else
+              {{"gaada" }}
+            @endif
           </span>
               <img class="img-xs rounded-circle" src="{{ url('assets/images/faces/face8.jpg') }}" alt="Profile image">
               </a>
