@@ -13,7 +13,7 @@
     <div class="card">
       <div class="card-body">
         <h3 class="font-weight-medium">Daftar Unit Audit</h3>
-        <a href="/unit_create">
+        <a href="/unitaudit_create">
           <button type="button" class="btn btn-success btn-sm mb-4"> Tambah Unit Audit </button>
         </a> 
 

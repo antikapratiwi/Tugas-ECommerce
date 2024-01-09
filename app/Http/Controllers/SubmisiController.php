@@ -9,7 +9,7 @@ class SubmisiController extends Controller
 {
     public function index_audit()
     {
-        session()->put(['id_unit_audit' => 3]);
+        // session()->put(['id_unit_audit' => 3]);
 
         $session_unit_audit = Helper::GetUnitAuditInSession(true);
         if($session_unit_audit === null)
@@ -26,7 +26,7 @@ class SubmisiController extends Controller
 
     public function index_postaudit()
     {
-        session()->put(['id_unit_audit' => 3]);
+        // session()->put(['id_unit_audit' => 3]);
 
         $session_unit_audit = Helper::GetUnitAuditInSession(true);
         if($session_unit_audit === null)
@@ -43,7 +43,7 @@ class SubmisiController extends Controller
     
     public function index_auditfinalization()
     {
-        session()->put(['id_unit_audit' => 3]);
+        // session()->put(['id_unit_audit' => 3]);
     
         $session_unit_audit = Helper::GetUnitAuditInSession(true);
         if($session_unit_audit === null)
@@ -61,7 +61,7 @@ class SubmisiController extends Controller
 
     public function index_audit_auditee()
     {
-        // session()->put(['id_unit_audit' => 3]);
+        session()->put(['id_unit_audit' => 3]);
 
         $session_unit_audit = Helper::GetUnitAuditInSession(true);
         if($session_unit_audit === null)
@@ -95,6 +95,7 @@ class SubmisiController extends Controller
 
     public function hasil_audit()
     {
+        // session()->put(['id_unit_audit' => 3]);
         session()->put(['id_unit_audit' => 1]);
 
         $session_unit_audit = Helper::GetUnitAuditInSession(true);
