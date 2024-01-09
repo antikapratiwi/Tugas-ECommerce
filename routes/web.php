@@ -6,6 +6,7 @@ use App\Http\Controllers\AnalisaController;
 use App\Http\Controllers\AnalisaLanjutanController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BillingController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\FileUploadLanjutanController;
 use App\Http\Controllers\KlausulController;
@@ -43,11 +44,10 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     // Your protected routes here
 });
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/login', [AuthenticationController::class, 'show'])->name('login');
+Route::get('/actions', [AuthenticationController::class, 'actions']);
 Route::post('/login', [AuthenticationController::class, 'login']);
 Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 
@@ -82,7 +82,7 @@ Route::post('/unitaudit_select/{unitAudit}', [UnitAuditController::class, 'selec
 Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
 
 
-// ============== PROSES UTAMA AUDIT 
+// ============== PROSES UTAMA AUDIT
 Route::get('/submisi_index', [SubmisiController::class, 'index_audit']);
 Route::get('/submisilanjutan_index', [SubmisiController::class, 'index_postaudit']);
 Route::get('/finalisasiaudit_index', [SubmisiController::class, 'index_auditfinalization']);
@@ -108,7 +108,7 @@ Route::post('/analisa_create', [AnalisaController::class, 'store']); //include c
 Route::get('/temuan_index', [TemuanController::class, 'index']);
 Route::get('/analisalanjutan_index', [AnalisaLanjutanController::class, 'index']);
 Route::post('/analisalanjutan_create/{responTemuan}', [AnalisaLanjutanController::class, 'create']);
-Route::post('/analisalanjutan_create', [AnalisaLanjutanController::class, 'store']); 
+Route::post('/analisalanjutan_create', [AnalisaLanjutanController::class, 'store']);
 
 Route::get('/analisa_index_auditee', [AnalisaController::class, 'index_auditee']);
 Route::get('/temuan_index_auditee', [TemuanController::class, 'index_auditee']);
