@@ -52,6 +52,23 @@ class InstanceSeeder extends Seeder
         for ($i = 0; $i < 3; $i++) {
             $this->createKlausul($standar, true);
         }
+
+        User::create([
+            'nama' => fake()->name(),
+            'nip' => fake()->numerify('################'),
+            'email' => "auditor@example.com",
+            'password' => bcrypt('password'),
+            'tipe' => 'auditor',
+            'id_unit_auditee' => null
+        ]);
+        User::create([
+            'nama' => fake()->name(),
+            'nip' => fake()->numerify('################'),
+            'email' => "auditee@example.com",
+            'password' => bcrypt('password'),
+            'tipe' => 'auditee',
+            'id_unit_auditee' => 1
+        ]);
     }
 
     public function createPeriode($deltaYear, $semester = 0)
