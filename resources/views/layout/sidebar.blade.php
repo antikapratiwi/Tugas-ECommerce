@@ -127,7 +127,7 @@
             <a class="nav-link" href="/submisilanjutan_index">Submisi Lanjutan {{-- (respon temuan & file upload lanjutan) --}}</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">Analisa Lanjutan</a>
+            <a class="nav-link" href="/analisalanjutan_index">Analisa Lanjutan</a>
           </li>
         </ul>
       </div>

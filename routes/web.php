@@ -85,11 +85,14 @@ Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
 Route::get('/submisi_index', [SubmisiController::class, 'index_audit']);
 Route::get('/submisilanjutan_index', [SubmisiController::class, 'index_postaudit']);
 
-// ============== ANALISA & TEMUAN
+// ============== ANALISA, ANALISA LANJUTAN, & TEMUAN
 Route::get('/analisa_index', [AnalisaController::class, 'index']);
 Route::post('/analisa_create/{subKlausulAudit}', [AnalisaController::class, 'create']); //include create Temuan
 Route::post('/analisa_create', [AnalisaController::class, 'store']); //include create Temuan
 Route::get('/temuan_index', [TemuanController::class, 'index']);
+Route::get('/analisalanjutan_index', [AnalisaLanjutanController::class, 'index']);
+Route::post('/analisalanjutan_create/{responTemuan}', [AnalisaLanjutanController::class, 'create']);
+Route::post('/analisalanjutan_create', [AnalisaLanjutanController::class, 'store']); 
 
 
 // ============== RESPON TEMUAN

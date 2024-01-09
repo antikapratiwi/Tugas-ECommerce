@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\AnalisaLanjutan;
+use App\Models\ResponTemuan;
 use Illuminate\Http\Request;
+
+use App\Libraries\Helper;
 
 class AnalisaLanjutanController extends Controller
 {
@@ -12,15 +15,31 @@ class AnalisaLanjutanController extends Controller
      */
     public function index()
     {
-        //
+        session()->put(['id_unit_audit' => 3]);
+        // dd("hello");
+
+        $session_unit_audit = Helper::GetUnitAuditInSession(true);
+
+        if($session_unit_audit === null)
+        {
+            return redirect('/unitaudit_index');
+        }
+
+        $klausul_audits = $session_unit_audit->klausul_audits;
+
+        return view("analisalanjutan_index", [
+            'main_data' => $klausul_audits
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(ResponTemuan $responTemuan)
     {
-        //
+        return view('analisalanjutan_create', [
+            'responTemuan' => $responTemuan
+        ]);
     }
 
     /**
@@ -28,7 +47,19 @@ class AnalisaLanjutanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+                // $request->session()->regenerate();
+        // dd($request);
+        // TODO: validation
+
+        $analisaLanjutan = AnalisaLanjutan::create([
+            // 'id' => $request,
+            'id_respon_temuan' => (int)$request->id_respon_temuan,
+            'mematuhi_standar' => (int)$request->mematuhi_standar,
+            'keterangan' => $request->keterangan,
+            'id_analisa_cache' => 1 // UNUSED, DUMMY DATA
+        ]);
+
+        return redirect('/submisilanjutan_index');
     }
 
     /**
