@@ -107,4 +107,26 @@ class AnalisaController extends Controller
     {
         //
     }
+
+
+
+
+    public function index_auditee()
+    {
+        // session()->put(['id_unit_audit' => 3]);
+        // dd("hello");
+
+        $session_unit_audit = Helper::GetUnitAuditInSession(true);
+
+        if($session_unit_audit === null)
+        {
+            return redirect('/unitaudit_index');
+        }
+
+        $klausul_audits = $session_unit_audit->klausul_audits;
+
+        return view("analisa_index_auditee", [
+            'main_data' => $klausul_audits
+        ]);
+    }
 }

@@ -90,6 +90,9 @@ Route::post('/putusanaudit_create', [PutusanAuditController::class, 'create']);
 Route::post('/putusanaudit_store', [PutusanAuditController::class, 'store']);
 
 Route::get('/submisi_index_auditee', [SubmisiController::class, 'index_audit_auditee']);
+Route::get('/fileupload_index', [FileUploadController::class, 'index']);
+Route::post('/fileupload_create/{subKlausulAudit}', [FileUploadController::class, 'create']);
+Route::post('/fileupload_store', [FileUploadController::class, 'store']);
 
 
 
@@ -101,6 +104,9 @@ Route::get('/temuan_index', [TemuanController::class, 'index']);
 Route::get('/analisalanjutan_index', [AnalisaLanjutanController::class, 'index']);
 Route::post('/analisalanjutan_create/{responTemuan}', [AnalisaLanjutanController::class, 'create']);
 Route::post('/analisalanjutan_create', [AnalisaLanjutanController::class, 'store']); 
+
+Route::get('/analisa_index_auditee', [AnalisaController::class, 'index_auditee']);
+
 
 
 // ============== RESPON TEMUAN

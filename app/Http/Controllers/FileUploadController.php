@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\FileUpload;
+use App\Models\SubKlausulAudit;
 use Illuminate\Http\Request;
+
+use App\Libraries\Helper;
 
 class FileUploadController extends Controller
 {
@@ -12,15 +15,31 @@ class FileUploadController extends Controller
      */
     public function index()
     {
-        //
+        session()->put(['id_unit_audit' => 3]);
+        // dd("hello");
+
+        $session_unit_audit = Helper::GetUnitAuditInSession(true);
+
+        if($session_unit_audit === null)
+        {
+            return redirect('/unitaudit_index');
+        }
+
+        $file_uploads = FileUpload::latest()->get();
+
+        return view("fileupload_index", [
+            'main_data' => $file_uploads
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(SubKlausulAudit $subKlausulAudit)
     {
-        //
+        return view('fileupload_create', [
+            'subKlausulAudit' => $subKlausulAudit
+        ]);
     }
 
     /**
@@ -28,7 +47,14 @@ class FileUploadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fileUpload = FileUpload::create([
+            // 'id' => $request,
+            'id_sub_klausul_audit' => (int)$request->id_sub_klausul_audit,
+            'file' => $request->file('file')->getClientOriginalName(),
+            'keterangan' => $request->keterangan,
+        ]);
+
+        return redirect('/submisi_index_auditee');
     }
 
     /**

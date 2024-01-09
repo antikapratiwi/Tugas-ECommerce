@@ -165,7 +165,10 @@
             <a class="nav-link" href="/submisi_index_auditee">Submisi {{-- (plus dikasi liat analisa kalo dah dibuat) --}}</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/">File Upload</a>
+            <a class="nav-link" href="/analisa_index_auditee">Analisa</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/fileupload_index">File Upload</a>
           </li>
         </ul>
       </div>
