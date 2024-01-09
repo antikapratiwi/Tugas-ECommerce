@@ -81,9 +81,14 @@ Route::get('/unitaudit_detail/{unit}', [UnitAuditController::class, 'show']);
 Route::post('/unitaudit_select/{unitAudit}', [UnitAuditController::class, 'select']);
 Route::post('/unitaudit_unselect', [UnitAuditController::class, 'unselect']);
 
-// ============== SUBMISI
+
+// ============== PROSES UTAMA AUDIT
 Route::get('/submisi_index', [SubmisiController::class, 'index_audit']);
 Route::get('/submisilanjutan_index', [SubmisiController::class, 'index_postaudit']);
+Route::get('/finalisasiaudit_index', [SubmisiController::class, 'index_auditfinalization']);
+Route::post('/putusanaudit_create', [PutusanAuditController::class, 'create']);
+Route::post('/putusanaudit_store', [PutusanAuditController::class, 'store']);
+
 
 // ============== ANALISA, ANALISA LANJUTAN, & TEMUAN
 Route::get('/analisa_index', [AnalisaController::class, 'index']);
