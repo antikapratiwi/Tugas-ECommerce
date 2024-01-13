@@ -114,7 +114,7 @@ class AnalisaController extends Controller
     public function index_auditee()
     {
         session()->put(['id_unit_audit' => 3]);
-        dd("hello");
+        // dd("hello");
 
         $session_unit_audit = Helper::GetUnitAuditInSession(true);
 

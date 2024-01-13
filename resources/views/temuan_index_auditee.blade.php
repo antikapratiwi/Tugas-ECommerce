@@ -52,18 +52,18 @@
                           @php
                             $respon_temuan = $temuan->respon_temuan;
                           @endphp
-                          {{-- @if(isset($respon_temuan))
+                          @if(isset($respon_temuan))
                             <a href="/respontemuan_index_auditee">
                               <button type="button" class="btn btn-rounded btn-primary">
                                 Lihat Respon Temuan
                               </button>
                             </a>
-                          @else --}}
+                          @else
                             <form action="/respontemuan_create/{{ $temuan->id }}" method="post" enctype="multipart/form-data">
                               @csrf
                               <button type="submit" class="btn btn-primary btn-sm">Rancang Respon Temuan</button>
                             </form>
-                          {{-- @endif --}}
+                          @endif
                         </td>
                       </tr>
                     @endif
